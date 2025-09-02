@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Setting up coding environment &#8212; CPSC 330 Applied Machine Learning 2025W1</title>
+    <title>Setting up your coding environment &#8212; CPSC 330 Applied Machine Learning 2025W1</title>
   
   
   
@@ -380,7 +380,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Setting up coding environment</h1>
+    <h1>Setting up your coding environment</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -390,20 +390,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-and-conda">Python and Conda</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">macOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start-tl-dr">Quick start (TL;DR)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-git">Step 1: Install Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-install-python-and-conda">Step 2: Install Python and Conda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-recommended-miniforge">Option A (recommended): Miniforge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-miniconda">Option B: Miniconda</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-python-packages">Installing Python packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual environment</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-and-why">What and Why</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-virtual-environment-conda-environments">Setting up a virtual environment: Conda environments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-verify-installation">Step 3: Verify installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-configure-conda-forge-miniconda-only">Step 4: Configure conda-forge (Miniconda only)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-create-the-course-environment">Step 5: Create the course environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-using-vs-code-alternative-to-jupyterlab">Step 6: Using VS Code (alternative to JupyterLab)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-vs-code">Install VS Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-repo-in-vs-code">Open the repo in VS Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-the-correct-environment">Select the correct environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-notebooks">Running notebooks</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-jupyterlab-and-python">[Optional] Jupyterlab and Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-troubleshooting">Step 7: Troubleshooting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-when-creating-course-environment">Errors when creating course environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apple-silicon-macs">Apple Silicon Macs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-learn-jupyterlab-and-python">[Optional] Learn JupyterLab and Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#credit">Credit</a></li>
 </ul>
             </nav>
@@ -416,132 +425,218 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="setting-up-coding-environment">
-<h1>Setting up coding environment<a class="headerlink" href="#setting-up-coding-environment" title="Link to this heading">#</a></h1>
-<section id="git">
-<h2>Git<a class="headerlink" href="#git" title="Link to this heading">#</a></h2>
-<p>If you want to clone the class GitHub repository and run lecture notebooks locally, which is highly recommended, you will need <code class="docutils literal notranslate"><span class="pre">Git</span></code> on your computer. Check out the <a class="reference external" href="https://github.com/UBC-CS/cpsc330-2025W1/blob/main/docs/git_installation.md">git setup instructions</a>. Also, most of our homework assignments will be done in JupyterLab.</p>
-<p>Once you have <code class="docutils literal notranslate"><span class="pre">Git</span></code>, go to the directory where you want to do CPSC 330 related work, and clone the course GitHub repository using the following command on your command line.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">UBC</span><span class="o">-</span><span class="n">CS</span><span class="o">/</span><span class="n">cpsc330</span><span class="o">-</span><span class="mi">2025</span><span class="n">W1</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
-<p>When there are updates in the repository, you can update the local copy using the command below from the directory of the repository.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
-</pre></div>
-</div>
-<p>Note: If you plan to take notes, try not to do it in this repository. If you do that, there are likely be merge conflicts and you won’t be able to run the command above smoothly.</p>
-</section>
-<section id="python-and-conda">
-<h2>Python and Conda<a class="headerlink" href="#python-and-conda" title="Link to this heading">#</a></h2>
-<p>We will be using Python for this course because it is open source and widely used in machine learning and data science. We will use Python 3 (in particular 3.12). <strong>Python 2 is not supported in this course.</strong></p>
-<p>We recommend the Miniconda Python distribution because it comes bundled with a bunch of useful packages (NumPy, SciPy, scikit-learn, Jupyter notebook) pre-installed. You can <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">download Miniconda from their website</a> that is suitable for your operating system. For example, I downloaded <a class="reference external" href="https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.pkg">Miniconda3 MaxOSX 64-bit pkg</a> on my macOS.</p>
-<p>To make sure that miniconda and Python are correctly installed, follow the instructions below based on your operating system.</p>
-<section id="macos">
-<h3>macOS<a class="headerlink" href="#macos" title="Link to this heading">#</a></h3>
-<p>After installation, go to spotlight search on your macbook and type “terminal” and go to this program. If you already have terminal open,  restart it. If the installation was successful, you will see <code class="docutils literal notranslate"><span class="pre">(base)</span></code> prepending to your prompt string. For example, here is how the terminal prompt looks like on my macbook.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) kvarada@CPSC-W-KVARADA01:~$
-</pre></div>
-</div>
-<p>To confirm that conda is working, you can ask it which version was installed:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
-</pre></div>
-</div>
-<p>which should return something like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="mf">24.7.1</span>
-</pre></div>
-</div>
-<p>Now, type</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
-</pre></div>
-</div>
-<p>which should return Python 3.11 or greater.</p>
-</section>
-<section id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
-<p>After installation, open the Start Menu and search for the program called “Anaconda Prompt (miniconda3)”. When this opens you will see a prompt similar to</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">your_name</span>
-</pre></div>
-</div>
-<p>Type the following to check that your Python installation is working:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
-</pre></div>
-</div>
-<p>which should return Python 3.10 or greater.</p>
-<p><em>Note: If instead you see Python 2.7.X you installed the wrong version. Uninstall the Miniconda you just installed (which usually lives in the /opt directory), and try the installation again, selecting Python 3.12.</em></p>
-</section>
-</section>
-<section id="installing-python-packages">
-<h2>Installing Python packages<a class="headerlink" href="#installing-python-packages" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span></code> installs Python packages from different online repositories which are called “channels”. A package needs to go through thorough testing before it is included in the default channel, which is good for stability, but also means that new versions will be delayed and fewer packages are available overall. There is a community-driven effort called the <a class="reference external" href="https://conda-forge.org/">conda-forge</a>, which provides more up to date packages. To enable us to access the most up to date version of the Python packages we are going to use, we will add the more up to date channel. To add the conda-forge channel by typing the following in the terminal:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
-</pre></div>
-</div>
-<p>We will be using <a class="reference external" href="https://jupyter.org/">JupyterLab</a> as our main coding environment and several python packages. To install these packages, we will be creating a <code class="docutils literal notranslate"><span class="pre">conda</span></code> virtual environment. (See the instructions in the next section.)</p>
-</section>
-<section id="virtual-environment">
-<h2>Virtual environment<a class="headerlink" href="#virtual-environment" title="Link to this heading">#</a></h2>
-<section id="what-and-why">
-<h3>What and Why<a class="headerlink" href="#what-and-why" title="Link to this heading">#</a></h3>
-<p><a class="reference external" href="https://docs.python.org/3/library/venv.html">A virtual environment</a> is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments, and (by default) any libraries installed in a “system” Python, i.e., one which is installed as part of your operating system.  For example, you may want a certain version of tensorflow for one project but another version for a different project. Virtual environments helps us to build environment isolation between different projects and make sure any change to dependencies affects only the projects that need it.</p>
-</section>
-<section id="setting-up-a-virtual-environment-conda-environments">
-<h3>Setting up a virtual environment: Conda environments<a class="headerlink" href="#setting-up-a-virtual-environment-conda-environments" title="Link to this heading">#</a></h3>
-<ol class="arabic">
-<li><p>Make sure that <code class="docutils literal notranslate"><span class="pre">conda</span></code> is installed by running</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="nb">list</span>
-</pre></div>
-</div>
-<p>You should see a list of environments as the output. If Miniconda is not installed, you can download Miniconda (a small, bootstrap version of Anaconda) from <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">here</a>.</p>
-</li>
-<li><p>If you have cloned the repository, navigate to it in the terminal and view the contents of the repository using the command below. You will see <code class="docutils literal notranslate"><span class="pre">cpsc330env.yml</span></code> at the root of the repository.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> 
-</pre></div>
-</div>
-</li>
-<li><p>Create an environment by running the command below in</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">cpsc330env</span><span class="o">.</span><span class="n">yml</span>
-</pre></div>
-</div>
-<p>which allows <code class="docutils literal notranslate"><span class="pre">conda</span></code> to download the dependencies needed for this course and put them in a virtual environment named <code class="docutils literal notranslate"><span class="pre">cpsc330</span></code>.
-You can check that the environemnt is installed successfully by running <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code> again. <code class="docutils literal notranslate"><span class="pre">cpsc330</span></code> should show up in the output.</p>
-</li>
-<li><p>Activate the environment with</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">cpsc330</span>
-</pre></div>
-</div>
-<p>After a successful activation, something like <code class="docutils literal notranslate"><span class="pre">(cpsc330)</span></code> should show up in the terminal.</p>
-</li>
-<li><p>We are all set! When you want to run the lecture materials or work on your homework, start Jupyter Lab from your cpsc330 environment, as shown below.</p>
-<p><code class="docutils literal notranslate"><span class="pre">(cpsc330)</span> <span class="pre">CPSC-M-KVARADA01:cpsc330-2025W1</span> <span class="pre">kvarada$</span> <span class="pre">jupyter</span> <span class="pre">lab</span></code></p>
-<p>Jupyter Lab will be opened in your default browser. Navigate to the appropriate notebook in Jupyter Lab.</p>
-</li>
-<li><p>To deactivate the environment, you can run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">deactivate</span>
-</pre></div>
-</div>
-</li>
+  <section class="tex2jax_ignore mathjax_ignore" id="setting-up-your-coding-environment">
+<h1>Setting up your coding environment<a class="headerlink" href="#setting-up-your-coding-environment" title="Link to this heading">#</a></h1>
+<p>This guide will help you get ready to run lecture notebooks and complete homework assignments on your own computer.</p>
+<p>You’ll need three main tools:</p>
+<ol class="arabic simple">
+<li><p><strong>Git:</strong> to download and update course materials from GitHub</p></li>
+<li><p><strong>Python &amp; Conda:</strong> to run code and manage packages</p></li>
+<li><p><strong>JupyterLab:</strong> or <strong>VS Code</strong> as your main coding environment</p></li>
 </ol>
-<p>For more information on conda environments, see <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">here</a>.</p>
-<p>Now you should be able to run the lecture notebooks on your computer! Please note that the environment file above is good to get started, but it does not contain all the packages we will be using in the course. We might need to install some packages manually later on, and we’ll provide you with instructions when the time comes.</p>
+<section id="quick-start-tl-dr">
+<h2>Quick start (TL;DR)<a class="headerlink" href="#quick-start-tl-dr" title="Link to this heading">#</a></h2>
+<p>If you already know what you’re doing, here are the essential commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repo</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/UBC-CS/cpsc330-2025W1.git
+<span class="nb">cd</span><span class="w"> </span>cpsc330-2025W1
+
+<span class="c1"># Add conda-forge channel (Miniconda only)</span>
+conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>conda-forge
+
+<span class="c1"># Create environment</span>
+conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>cpsc330env.yml
+
+<span class="c1"># (Optional) Test activating/deactivating the environment</span>
+conda<span class="w"> </span>activate<span class="w"> </span>cpsc330
+conda<span class="w"> </span>deactivate
+
+<span class="c1"># Start JupyterLab from base</span>
+jupyter<span class="w"> </span>lab
+
+<span class="c1"># Or start VS Code from base</span>
+code<span class="w"> </span>.
+</pre></div>
+</div>
+<blockquote>
+<div><p>⚠️ Normally, you will launch JupyterLab or VS Code from <code class="docutils literal notranslate"><span class="pre">(base)</span></code> and then select the <code class="docutils literal notranslate"><span class="pre">cpsc330</span></code> environment inside those tools. Activating it in the terminal is only needed for testing or if you want to install additional packages in the environment later on.</p>
+</div></blockquote>
 </section>
-<section id="debugging">
-<h3>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">#</a></h3>
-<p>If the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">cpsc330env.yml</span></code> command above results in an error on your computer:</p>
+<section id="step-1-install-git">
+<h2>Step 1: Install Git<a class="headerlink" href="#step-1-install-git" title="Link to this heading">#</a></h2>
+<p>We use Git to manage and download course material from GitHub. Follow the <a class="reference external" href="https://github.com/UBC-CS/cpsc330-2025W1/blob/main/docs/git_installation.md">Git setup instructions</a>.</p>
+<p>Once installed:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/UBC-CS/cpsc330-2025W1.git
+<span class="nb">cd</span><span class="w"> </span>cpsc330-2025W1
+</pre></div>
+</div>
+<p>To update later:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
+</pre></div>
+</div>
+<blockquote>
+<div><p>⚠️ Tip: Don’t keep personal notes inside this repository. Otherwise, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> may fail due to conflicts. Keep notes in a separate folder/repo.</p>
+</div></blockquote>
+</section>
+<section id="step-2-install-python-and-conda">
+<h2>Step 2: Install Python and Conda<a class="headerlink" href="#step-2-install-python-and-conda" title="Link to this heading">#</a></h2>
+<p>We use Python 3.12 (Python 2 is not supported). To manage Python and packages, you’ll install a Conda distribution. You have two options:</p>
+<section id="option-a-recommended-miniforge">
+<h3>Option A (recommended): Miniforge<a class="headerlink" href="#option-a-recommended-miniforge" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Figure out what package it’s failing on from the error message.</p></li>
-<li><p>Get rid of the line with that package from your local copy of <code class="docutils literal notranslate"><span class="pre">cpsc330env.yml</span></code>.</p></li>
-<li><p>Try creating the environment again with the modified <code class="docutils literal notranslate"><span class="pre">cpsc330env.yml</span></code>.</p></li>
-<li><p>Once the environment is created, activate the environment and install the missing packages manually in the environment. You may have to install these packages using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> in some cases, as the most recent version of the package might not available via <code class="docutils literal notranslate"><span class="pre">conda</span></code> for your operating system yet.</p></li>
-<li><p>If you still have trouble with the environment and running lecture notebooks on your machine, make use of office hours and tutorials.</p></li>
+<li><p>Lightweight installer that defaults to the conda-forge channel (up-to-date, consistent across platforms).</p></li>
+<li><p>Works smoothly on Windows, Linux, and macOS (including Apple Silicon).</p></li>
+</ul>
+<p><a class="reference external" href="https://conda-forge.org/download/">Download Miniforge here</a>. Choose the installer for your operating system.</p>
+</section>
+<section id="option-b-miniconda">
+<h3>Option B: Miniconda<a class="headerlink" href="#option-b-miniconda" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The official distribution from Anaconda.</p></li>
+<li><p>Defaults to the defaults channel (stable, but sometimes outdated).</p></li>
+<li><p>Requires one extra step: adding the conda-forge channel.</p></li>
+</ul>
+<p><a class="reference external" href="https://www.anaconda.com/docs/getting-started/miniconda/main">Download Miniconda here</a>. Choose the installer for your operating system.</p>
+</section>
+</section>
+<section id="step-3-verify-installation">
+<h2>Step 3: Verify installation<a class="headerlink" href="#step-3-verify-installation" title="Link to this heading">#</a></h2>
+<p>After installation:</p>
+<ul class="simple">
+<li><p><strong>macOS:</strong> open Terminal (⌘ + Space → type “Terminal”).</p></li>
+<li><p><strong>Windows:</strong> open <strong>Anaconda Prompt (miniforge3 or miniconda3)</strong> from the Start Menu.</p></li>
+<li><p><strong>Linux:</strong> open your system’s terminal (Ctrl+Alt+T).</p></li>
+</ul>
+<p>You should see <code class="docutils literal notranslate"><span class="pre">(base)</span></code> at the start of your command line prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) yourusername@computer:~$
+</pre></div>
+</div>
+<p>Check installation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>--version
+python<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>Expected:</p>
+<blockquote>
+<div><p>conda: recent version (e.g., 24.x.x)<br />
+python: 3.12 or greater</p>
+</div></blockquote>
+<p>If you see Python 2.7, reinstall with Python 3.12.</p>
+</section>
+<section id="step-4-configure-conda-forge-miniconda-only">
+<h2>Step 4: Configure conda-forge (Miniconda only)<a class="headerlink" href="#step-4-configure-conda-forge-miniconda-only" title="Link to this heading">#</a></h2>
+<p>If you installed Miniconda, add the conda-forge channel:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>conda-forge
+</pre></div>
+</div>
+<p>If you installed Miniforge, you can skip this step (it’s already the default).</p>
+</section>
+<section id="step-5-create-the-course-environment">
+<h2>Step 5: Create the course environment<a class="headerlink" href="#step-5-create-the-course-environment" title="Link to this heading">#</a></h2>
+<p>A virtual environment keeps course packages isolated from other projects.</p>
+<ol class="arabic simple">
+<li><p>Navigate to the course repo if you are not already there. Make sure <code class="docutils literal notranslate"><span class="pre">cpsc330env.yml</span></code> exists in the repo you cloned:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>cpsc330-2025W1
+ls<span class="w"> </span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create the environment.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>cpsc330env.yml
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>(Optional) Test activating and deactivating the environment.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>cpsc330
+conda<span class="w"> </span>deactivate
+</pre></div>
+</div>
+<p>Your prompt should return to <code class="docutils literal notranslate"><span class="pre">(base)</span></code> when deactivated.</p>
+<blockquote>
+<div><p>✅ You only need to create the environment once. Normally, you will stay in <code class="docutils literal notranslate"><span class="pre">(base)</span></code> and select the <code class="docutils literal notranslate"><span class="pre">cpsc330</span></code> kernel in JupyterLab or VS Code.</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Launch JupyterLab (from base environment):</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+<p>JupyterLab will open in your browser. At the top-right corner of your notebook, click on the kernel dropdown. Select the kernel named <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">[conda</span> <span class="pre">env:cpsc330]</span></code>. Now you’re running the notebook inside the course environment.</p>
+</section>
+<hr class="docutils" />
+<section id="step-6-using-vs-code-alternative-to-jupyterlab">
+<h2>Step 6: Using VS Code (alternative to JupyterLab)<a class="headerlink" href="#step-6-using-vs-code-alternative-to-jupyterlab" title="Link to this heading">#</a></h2>
+<p>Some of you may prefer using <a class="reference external" href="https://code.visualstudio.com/">VS Code</a> instead of JupyterLab. Both work fine. It’s your choice.</p>
+<section id="install-vs-code">
+<h3>Install VS Code<a class="headerlink" href="#install-vs-code" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://code.visualstudio.com/">Download from Visual Studio Code</a>.</p></li>
+<li><p>Install the <strong>Python</strong> extension and the <strong>Jupyter</strong> extension (search in the Extensions Marketplace inside VS Code).</p></li>
+</ul>
+</section>
+<section id="open-the-repo-in-vs-code">
+<h3>Open the repo in VS Code<a class="headerlink" href="#open-the-repo-in-vs-code" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Open VS Code → File → Open Folder → select the cloned <code class="docutils literal notranslate"><span class="pre">cpsc330-2025W1</span></code> folder.</p></li>
+<li><p>Or in the terminal navigate to <code class="docutils literal notranslate"><span class="pre">cpsc330-2025W1</span></code> and open VS Code:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>code<span class="w"> </span>.<span class="w"> </span>
+</pre></div>
+</div>
+</section>
+<section id="select-the-correct-environment">
+<h3>Select the correct environment<a class="headerlink" href="#select-the-correct-environment" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Open the Command Palette (⇧⌘P on macOS, Ctrl+Shift+P on Windows/Linux).</p></li>
+<li><p>Type <strong>Python: Select Interpreter</strong>.</p></li>
+<li><p>Choose the interpreter starting with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env:cpsc330</span></code>.</p></li>
+</ol>
+<p>⚠️ If you don’t see the interpreter, restart VS Code after creating the environment.</p>
+</section>
+<section id="running-notebooks">
+<h3>Running notebooks<a class="headerlink" href="#running-notebooks" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Open any <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file from the repo.</p></li>
+<li><p>At the top right, select the <code class="docutils literal notranslate"><span class="pre">cpsc330</span></code> kernel if it isn’t already selected.</p></li>
+<li><p>Run cells with <strong>Shift+Enter</strong>.</p></li>
 </ul>
 </section>
 </section>
-<section id="optional-jupyterlab-and-python">
-<h2>[Optional] Jupyterlab and Python<a class="headerlink" href="#optional-jupyterlab-and-python" title="Link to this heading">#</a></h2>
-<p>Here is a short video of an introduction to JupyterLab and Python - I created the video for another course that uses similar tooling.</p>
-<p>If you’re new to Jupyterlab and/or Python, I encourage you to watch this to get familiar with the tools:</p>
+<section id="step-7-troubleshooting">
+<h2>Step 7: Troubleshooting<a class="headerlink" href="#step-7-troubleshooting" title="Link to this heading">#</a></h2>
+<section id="errors-when-creating-course-environment">
+<h3>Errors when creating course environment<a class="headerlink" href="#errors-when-creating-course-environment" title="Link to this heading">#</a></h3>
+<p>If <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">cpsc330env.yml</span></code> fails:</p>
+<ul class="simple">
+<li><p>Check the error message and identify the problematic package.</p></li>
+<li><p>Remove that package line from <code class="docutils literal notranslate"><span class="pre">cpsc330env.yml</span></code>.</p></li>
+<li><p>Re-run the command.</p></li>
+<li><p>If needed, install missing packages manually:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>packagename
+<span class="c1"># or</span>
+pip<span class="w"> </span>install<span class="w"> </span>packagename
+</pre></div>
+</div>
+</section>
+<section id="apple-silicon-macs">
+<h3>Apple Silicon Macs<a class="headerlink" href="#apple-silicon-macs" title="Link to this heading">#</a></h3>
+<p>On Apple Silicon (M1/M2/M3) Macs, some packages may fail to install. Try rerunning with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CONDA_SUBDIR</span><span class="o">=</span>osx-64<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>cpsc330env.yml
+</pre></div>
+</div>
+<p>This forces installation from Intel builds, which are often more stable.</p>
+<p>Still stuck? Bring your laptop to office hours or tutorials and get help.</p>
+</section>
+</section>
+<section id="optional-learn-jupyterlab-and-python">
+<h2>[Optional] Learn JupyterLab and Python<a class="headerlink" href="#optional-learn-jupyterlab-and-python" title="Link to this heading">#</a></h2>
+<p>If you’re new to JupyterLab and/or Python, here is a short video of an introduction to JupyterLab and Python created by one of the instructors of the course for another course that uses similar tooling.</p>
 <div class="container youtube">
-<iframe src="https://player.vimeo.com/video/1006820659?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Introduction to Jupyterlab and Python"></iframe>
+<iframe src="https://player.vimeo.com/video/1006820659?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Introduction to JupyterLab and Python"></iframe>
 <script src="https://player.vimeo.com/api/player.js"></script>
 </div>
 </section>
@@ -597,20 +692,29 @@ You can check that the environemnt is installed successfully by running <code cl
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-and-conda">Python and Conda</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">macOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start-tl-dr">Quick start (TL;DR)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-install-git">Step 1: Install Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-install-python-and-conda">Step 2: Install Python and Conda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-recommended-miniforge">Option A (recommended): Miniforge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-miniconda">Option B: Miniconda</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-python-packages">Installing Python packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual environment</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-and-why">What and Why</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-virtual-environment-conda-environments">Setting up a virtual environment: Conda environments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging">Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-verify-installation">Step 3: Verify installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-configure-conda-forge-miniconda-only">Step 4: Configure conda-forge (Miniconda only)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-create-the-course-environment">Step 5: Create the course environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-using-vs-code-alternative-to-jupyterlab">Step 6: Using VS Code (alternative to JupyterLab)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-vs-code">Install VS Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-repo-in-vs-code">Open the repo in VS Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-the-correct-environment">Select the correct environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-notebooks">Running notebooks</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-jupyterlab-and-python">[Optional] Jupyterlab and Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-troubleshooting">Step 7: Troubleshooting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-when-creating-course-environment">Errors when creating course environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apple-silicon-macs">Apple Silicon Macs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-learn-jupyterlab-and-python">[Optional] Learn JupyterLab and Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#credit">Credit</a></li>
 </ul>
   </nav></div>

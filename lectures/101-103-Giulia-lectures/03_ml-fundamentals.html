@@ -400,7 +400,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-video">Generalization [video]</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#big-picture-and-motivation">Big picture and motivation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-complexity-and-training-error">Model complexity and training error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eva-s-questions">🤔 Eva’s questions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-fundamental-goal-of-ml">Generalization: Fundamental goal of ML</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizing-to-unseen-data">Generalizing to unseen data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-error-vs-generalization-error">Training error vs. Generalization error</a></li>
@@ -415,6 +414,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-validation-test-split">Train/validation/test split</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-it-matter">Why does it matter</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-data">“Deployment” data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-train-validation-test-and-deployment-data">Summary of train, validation, test, and deployment data</a></li>
 </ul>
@@ -430,6 +430,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-using-scikit-learn">Cross-validation using <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-val-score"><code class="docutils literal notranslate"><span class="pre">cross_val_score</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validate"><code class="docutils literal notranslate"><span class="pre">cross_validate</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-details">More details</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#our-typical-supervised-learning-set-up-is-as-follows">Our typical supervised learning set up is as follows:</a></li>
 </ul>
 </li>
@@ -443,11 +446,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-vs-variance-tradeoff">Bias vs variance tradeoff</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-pick-a-model-that-would-generalize-better">How to pick a model that would generalize better?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-score-vs-cross-validation-score">test score vs. cross-validation score</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-golden-rule">The golden rule <a name="4"></a></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#golden-rule-violation-example-1">Golden rule violation: Example 1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#golden-rule-violation-example-2">Golden rule violation: Example 2</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-golden-rule">The golden rule <a name="4"></a></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-avoid-violating-golden-rule">How can we avoid violating golden rule?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#here-is-the-workflow-we-ll-generally-follow">Here is the workflow we’ll generally follow.</a></li>
 </ul>
@@ -506,6 +505,9 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>
 
 <span class="n">DATA_DIR</span> <span class="o">=</span> <span class="s1">&#39;../data/&#39;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -783,7 +785,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error:   0.286
 </pre></div>
 </div>
-<img alt="../../_images/bc9bbe10d5e6de202d4a7117fa33afd9975155ba90a40e44135e990b38171d8d.png" src="../../_images/bc9bbe10d5e6de202d4a7117fa33afd9975155ba90a40e44135e990b38171d8d.png" />
+<img alt="../../_images/cea03e38a0e78cd250b7d9f43642468366b5c70f5de91c6fb087600d731e98ad.png" src="../../_images/cea03e38a0e78cd250b7d9f43642468366b5c70f5de91c6fb087600d731e98ad.png" />
 </div>
 </div>
 <p>In the following model, this decision boundary is created by asking two questions.</p>
@@ -804,7 +806,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error:   0.190
 </pre></div>
 </div>
-<img alt="../../_images/34f719ac8a9e98e1afd6cc616cc46337662bb4282aa304f9cd7d2020515e5a4d.png" src="../../_images/34f719ac8a9e98e1afd6cc616cc46337662bb4282aa304f9cd7d2020515e5a4d.png" />
+<img alt="../../_images/bfc17cdc70cf550670e263a700f4dec8feb6f2129bf372509ab89a82f10b7b54.png" src="../../_images/bfc17cdc70cf550670e263a700f4dec8feb6f2129bf372509ab89a82f10b7b54.png" />
 </div>
 </div>
 <p>Let’s look at the decision boundary with depth = 4.</p>
@@ -825,7 +827,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error:   0.048
 </pre></div>
 </div>
-<img alt="../../_images/2bbeee1d76957a6a339327438bfb4dff6ac8a524aa7bb3b1c0257d11117d02ee.png" src="../../_images/2bbeee1d76957a6a339327438bfb4dff6ac8a524aa7bb3b1c0257d11117d02ee.png" />
+<img alt="../../_images/cad6657329c947363f4aeb76732527b7b8ddd5703774166ee612b96924343bd7.png" src="../../_images/cad6657329c947363f4aeb76732527b7b8ddd5703774166ee612b96924343bd7.png" />
 </div>
 </div>
 <p>Let’s look at the decision boundary with depth = 6.</p>
@@ -846,11 +848,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error:   0.000
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but DecisionTreeClassifier was fitted with feature names
-  warnings.warn(
-</pre></div>
-</div>
-<img alt="../../_images/27286d3bb701fdf3e933827a60af6ee7391baff4cfff096325ccd5312312d290.png" src="../../_images/27286d3bb701fdf3e933827a60af6ee7391baff4cfff096325ccd5312312d290.png" />
+<img alt="../../_images/8fcbbf6be7a75a03535e90012fc7dc11d9199fa4ed6d52de4b0a7becf9ccc28a.png" src="../../_images/8fcbbf6be7a75a03535e90012fc7dc11d9199fa4ed6d52de4b0a7becf9ccc28a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -869,54 +867,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/17468f2fe20fef73f96ac9e6b09eda2948351d408976821031bbd139d7943926.png" src="../../_images/17468f2fe20fef73f96ac9e6b09eda2948351d408976821031bbd139d7943926.png" />
+<img alt="../../_images/c8e7cdac2fef5b1003f2327112c3d0b78784b0044c87fd5f90e5c4203f4735d5.png" src="../../_images/c8e7cdac2fef5b1003f2327112c3d0b78784b0044c87fd5f90e5c4203f4735d5.png" />
 </div>
 </div>
 <ul class="simple">
 <li><p>Our model has 0% error for depths &gt;= 6!!</p></li>
 <li><p>But it’s also becoming more and more specific and sensitive to the training data.</p></li>
 <li><p>Is it good or bad?</p></li>
+<li><p>What is the best depth?</p></li>
 </ul>
-<div class="note admonition">
-<p class="admonition-title">Note</p>
-<p>Although the plot above (complexity hyperparameter vs error) is more popular, we could also look at the same plot flip the <span class="math notranslate nohighlight">\(y\)</span>-axis, i.e., consider accuracy instead of error.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_depths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
-<span class="n">accuracies</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">max_depth</span> <span class="ow">in</span> <span class="n">max_depths</span><span class="p">:</span>
-    <span class="n">accuracy</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="n">max_depth</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_subset</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_subset</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="p">)</span>
-    <span class="n">accuracies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">max_depths</span><span class="p">,</span> <span class="n">accuracies</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;max depth&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;accuracy&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/dc339bcfa8010cf8ac1b032244cd957af57f8e83a1d11ebdc09ab44e289b1ff8.png" src="../../_images/dc339bcfa8010cf8ac1b032244cd957af57f8e83a1d11ebdc09ab44e289b1ff8.png" />
-</div>
-</div>
-</section>
-<section id="eva-s-questions">
-<h3>🤔 Eva’s questions<a class="headerlink" href="#eva-s-questions" title="Link to this heading">#</a></h3>
-<p><img alt="" src="../../_images/eva-think.png" /></p>
-<p>At this point Eva is wondering about the following questions.</p>
-<ul class="simple">
-<li><p>How to pick the best depth?</p></li>
-<li><p>How can we make sure that the model we have built would do reasonably well on new data in the wild when it’s deployed?</p></li>
-<li><p>Which of the following rules learned by the decision tree algorithm are likely to generalize better to new data?</p></li>
-</ul>
-<blockquote>
-<div><p>Rule 1: If class_attendance == 1 then grade is A+.</p>
-</div></blockquote>
-<blockquote>
-<div><p>Rule 2: If lab3 &gt; 83.5 and quiz1 &lt;= 83.5 and lab2 &lt;= 88 then quiz2 grade is A+</p>
-</div></blockquote>
-<p>To better understand the material in the next sections, think about these questions on your own or discuss them with your friend/neighbour before proceeding.</p>
 <p><br><br><br><br></p>
 </section>
 <section id="generalization-fundamental-goal-of-ml">
@@ -925,16 +884,11 @@ document.write(`
 <div><p><strong>To generalize beyond what we see in the training examples</strong></p>
 </div></blockquote>
 <p>We only have access to limited amount of training data and we want to learn a mapping function which would predict targets reasonably well for examples beyond this training data.</p>
-<ul class="simple">
-<li><p>Example: Imagine that a learner sees the following images and corresponding labels.</p></li>
-</ul>
-<p><img alt="" src="../../_images/generalization-train.png" /></p>
-<!-- <center>
-<img src='img/generalization-train.png' width="600" height="600" />
-</center>     --></section>
+</section>
 <section id="generalizing-to-unseen-data">
 <h3>Generalizing to unseen data<a class="headerlink" href="#generalizing-to-unseen-data" title="Link to this heading">#</a></h3>
 <ul class="simple">
+<li><p>Imagine that a learner sees the following training images and corresponding labels.</p></li>
 <li><p>Now the learner is presented with new images (1 to 4) for prediction.</p></li>
 <li><p>What prediction would you expect for each image?</p></li>
 </ul>
@@ -985,6 +939,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe src=https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html width=1000 height=800></iframe></div></div>
 </div>
 <ul class="simple">
 <li><p>We can pass <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> or a dataframe with both <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> in it.</p></li>
@@ -1016,10 +972,109 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-130.0437</td>
+      <td>55.9773</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-134.4197</td>
+      <td>58.3019</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-123.0780</td>
+      <td>48.9854</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-122.7436</td>
+      <td>48.9881</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-122.2691</td>
+      <td>48.9951</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>204</th>
+      <td>-72.7218</td>
+      <td>45.3990</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>-66.6458</td>
+      <td>45.9664</td>
+    </tr>
+    <tr>
+      <th>206</th>
+      <td>-79.2506</td>
+      <td>42.9931</td>
+    </tr>
+    <tr>
+      <th>207</th>
+      <td>-72.9406</td>
+      <td>45.6275</td>
+    </tr>
+    <tr>
+      <th>208</th>
+      <td>-79.4608</td>
+      <td>46.3092</td>
+    </tr>
+  </tbody>
+</table>
+<p>209 rows × 2 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0         USA
+1         USA
+2         USA
+3         USA
+4         USA
+        ...  
+204    Canada
+205    Canada
+206    Canada
+207    Canada
+208    Canada
+Name: country, Length: 209, dtype: object
 </pre></div>
 </div>
 </div>
@@ -1050,6 +1105,41 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Data portion</th>
+      <th>Shape</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>X</td>
+      <td>(209, 2)</td>
+    </tr>
+    <tr>
+      <td>y</td>
+      <td>(209,)</td>
+    </tr>
+    <tr>
+      <td>X_train</td>
+      <td>(167, 2)</td>
+    </tr>
+    <tr>
+      <td>y_train</td>
+      <td>(167,)</td>
+    </tr>
+    <tr>
+      <td>X_test</td>
+      <td>(42, 2)</td>
+    </tr>
+    <tr>
+      <td>y_test</td>
+      <td>(42,)</td>
+    </tr>
+  </tbody>
+</table></div></div>
 </div>
 <section id="creating-train-df-and-test-df">
 <h4>Creating <code class="docutils literal notranslate"><span class="pre">train_df</span></code> and <code class="docutils literal notranslate"><span class="pre">test_df</span></code><a class="headerlink" href="#creating-train-df-and-test-df" title="Link to this heading">#</a></h4>
@@ -1067,6 +1157,64 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>160</th>
+      <td>-76.4813</td>
+      <td>44.2307</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>-81.2496</td>
+      <td>42.9837</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>-66.0580</td>
+      <td>45.2788</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>-73.2533</td>
+      <td>45.3057</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>-67.9245</td>
+      <td>47.1652</td>
+      <td>Canada</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1075,6 +1223,9 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;latitude&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f383fdf848a94ce985eb973cc2b3b063c999b7db7bd3e8b2688f70c31906cab5.png" src="../../_images/f383fdf848a94ce985eb973cc2b3b063c999b7db7bd3e8b2688f70c31906cab5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1085,6 +1236,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6448dd0db1c9cac78e992f87e9fcd5f7637dd590d897a8b793736344d2e0363e.png" src="../../_images/6448dd0db1c9cac78e992f87e9fcd5f7637dd590d897a8b793736344d2e0363e.png" />
+</div>
 </div>
 <p>Let’s examine the train and test accuracies with the split now.</p>
 <div class="cell docutils container">
@@ -1094,12 +1248,21 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train accuracy:   1.000
+Test accuracy:   0.738
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_tree_decision_boundary_and_tree</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f37e0bce352f1169491a23fced5aecfbdfea9d54773465ddc5e4f28ab65d52b3.png" src="../../_images/f37e0bce352f1169491a23fced5aecfbdfea9d54773465ddc5e4f28ab65d52b3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1127,6 +1290,9 @@ document.write(`
 <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/27c77e293144f0a65544ca139980f587411780f593ac72687db1674072f7ed7d.png" src="../../_images/27c77e293144f0a65544ca139980f587411780f593ac72687db1674072f7ed7d.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1187,11 +1353,13 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p>Note that there isn’t good concensus on the terminology of what is validation and what is test.</p>
-<div class="note admonition">
-<p class="admonition-title">Note</p>
-<p>Validation data is also referred to as <strong>development data</strong> or <strong>dev set</strong> for short.</p>
-</div>
+</section>
+<section id="why-does-it-matter">
+<h3>Why does it matter<a class="headerlink" href="#why-does-it-matter" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Test data is supposed to be the closest thing to real world, completely unseen samples.</p></li>
+<li><p>It should not influence the model in any way, not even in the choice of hyperparameters.</p></li>
+</ul>
 </section>
 <section id="deployment-data">
 <h3>“Deployment” data<a class="headerlink" href="#deployment-data" title="Link to this heading">#</a></h3>
@@ -1244,7 +1412,7 @@ document.write(`
 <h2>❓❓ Questions for you<a class="headerlink" href="#questions-for-you" title="Link to this heading">#</a></h2>
 <section id="iclicker-exercise-3-1">
 <h3>iClicker Exercise 3.1<a class="headerlink" href="#iclicker-exercise-3-1" title="Link to this heading">#</a></h3>
-<p><strong>iClicker cloud join link: https://join.iclicker.com/VYFJ</strong></p>
+<p><strong>iClicker cloud join link: https://join.iclicker.com/RITY</strong></p>
 <p><strong>Select all of the following statements which are TRUE.</strong></p>
 <ul class="simple">
 <li><p>(A) A decision tree model with no depth (the default <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> in <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>) is likely to perform very well on the deployment data.</p></li>
@@ -1268,6 +1436,7 @@ document.write(`
 <li><p>Only using a portion of your data for training and only a portion for validation.</p></li>
 <li><p>If your dataset is small you might end up with a tiny training and/or validation set.</p></li>
 <li><p>You might be unlucky with your splits such that they don’t align well or don’t well represent your test data.</p></li>
+<li><p><strong>Low reliability of validation score.</strong></p></li>
 </ul>
 <p><img alt="" src="../../_images/train-valid-test-split.png" /></p>
 <!-- <img src='img/train-valid-test-split.png' width="1500" height="1500" /> --></section>
@@ -1305,11 +1474,23 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.76470588, 0.82352941, 0.70588235, 0.94117647, 0.82352941,
+       0.82352941, 0.70588235, 0.9375    , 0.9375    , 0.9375    ])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average cross-validation score = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cv_scores</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Standard deviation of cross-validation score = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">cv_scores</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average cross-validation score = 0.84
+Standard deviation of cross-validation score = 0.09
 </pre></div>
 </div>
 </div>
@@ -1331,11 +1512,108 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
-
-<span class="c1"># Note that this function calls &quot;test_score&quot; what we would call validation score</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fit_time</th>
+      <th>score_time</th>
+      <th>test_score</th>
+      <th>train_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.001082</td>
+      <td>0.000711</td>
+      <td>0.764706</td>
+      <td>0.913333</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.001113</td>
+      <td>0.000720</td>
+      <td>0.823529</td>
+      <td>0.906667</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.000870</td>
+      <td>0.000610</td>
+      <td>0.705882</td>
+      <td>0.906667</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.000816</td>
+      <td>0.000551</td>
+      <td>0.941176</td>
+      <td>0.900000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.000839</td>
+      <td>0.000534</td>
+      <td>0.823529</td>
+      <td>0.906667</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.000707</td>
+      <td>0.000496</td>
+      <td>0.823529</td>
+      <td>0.913333</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.000712</td>
+      <td>0.000496</td>
+      <td>0.705882</td>
+      <td>0.920000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.000701</td>
+      <td>0.000502</td>
+      <td>0.937500</td>
+      <td>0.900662</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.000696</td>
+      <td>0.000477</td>
+      <td>0.937500</td>
+      <td>0.900662</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.000691</td>
+      <td>0.000480</td>
+      <td>0.937500</td>
+      <td>0.900662</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1343,23 +1621,65 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>fit_time</th>
+      <td>0.000823</td>
+    </tr>
+    <tr>
+      <th>score_time</th>
+      <td>0.000558</td>
+    </tr>
+    <tr>
+      <th>test_score</th>
+      <td>0.840074</td>
+    </tr>
+    <tr>
+      <th>train_score</th>
+      <td>0.906865</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
+</section>
+</section>
+<section id="more-details">
+<h3>More details<a class="headerlink" href="#more-details" title="Link to this heading">#</a></h3>
 <p>Keep in mind that cross-validation does not return a model. It is not a way to build a model that can be applied to new data. The purpose of cross-validation is to <strong>evaluate</strong> how well the model will generalize to unseen data.</p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
 <p>Note that both <code class="docutils literal notranslate"><span class="pre">cross_val_score</span></code> and <code class="docutils literal notranslate"><span class="pre">cross_validate</span></code> functions do not shuffle the data. Check out <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html#sklearn.model_selection.StratifiedKFold"><code class="docutils literal notranslate"><span class="pre">StratifiedKFold</span></code></a>, where proportions of classes is the same in each fold as they are in the whole dataset. By default, <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> uses <code class="docutils literal notranslate"><span class="pre">StratifiedKFold</span></code> when carrying out cross-validation for classification problems.</p>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mglearn</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">plot_cross_validation</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/c1e9006e61ca815caa324c4c20c9b097d725f92582e61789ea21ce30312bee65.png" src="../../_images/c1e9006e61ca815caa324c4c20c9b097d725f92582e61789ea21ce30312bee65.png" />
 </div>
-</section>
+</div>
 <section id="our-typical-supervised-learning-set-up-is-as-follows">
 <h4>Our typical supervised learning set up is as follows:<a class="headerlink" href="#our-typical-supervised-learning-set-up-is-as-follows" title="Link to this heading">#</a></h4>
 <ul class="simple">
@@ -1370,16 +1690,6 @@ document.write(`
 <li><p>What we care about is the <strong>test error</strong>, which tells us how well our model can be generalized.</p></li>
 <li><p>If this test error is “reasonable” we deploy the model which will be used on new unseen examples.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mean_std_cross_val_scores</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -1400,19 +1710,9 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">results</span><span class="p">[</span><span class="s2">&quot;Decision tree&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_std_cross_val_scores</span><span class="p">(</span>
-    <span class="n">model</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span>
-<span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
-<li><p>How do we know whether this test score is reasonable?</p></li>
+<li><p>Great! Now we have a way to be more confident in our validation scores, even if the dataset is not very large.</p></li>
+<li><p>But we did not solve the problem of picking the best hyperparameters…</p></li>
 </ul>
 </section>
 </section>
@@ -1421,7 +1721,6 @@ document.write(`
 <h2>Underfitting, overfitting, the fundamental trade-off, the golden rule [<a class="reference external" href="https://youtu.be/Ihay8yE5KTI">video</a>]<a class="headerlink" href="#underfitting-overfitting-the-fundamental-trade-off-the-golden-rule-video" title="Link to this heading">#</a></h2>
 <section id="types-of-errors">
 <h3>Types of errors<a class="headerlink" href="#types-of-errors" title="Link to this heading">#</a></h3>
-<p>Imagine that your train and validation errors do not align with each other. How do you diagnose the problem?</p>
 <p>We’re going to think about 4 types of errors:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(E_\textrm{train}\)</span> is your training error (or mean train error from cross-validation).</p></li>
@@ -1429,6 +1728,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(E_\textrm{test}\)</span> is your test error.</p></li>
 <li><p><span class="math notranslate nohighlight">\(E_\textrm{best}\)</span> is the best possible error you could get for a given problem.</p></li>
 </ul>
+<p>The relative values of these errors tell you a lot about how the model is learning.</p>
 </section>
 <section id="underfitting">
 <h3>Underfitting<a class="headerlink" href="#underfitting" title="Link to this heading">#</a></h3>
@@ -1438,6 +1738,12 @@ document.write(`
 <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Train error:   </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s2">&quot;train_score&quot;</span><span class="p">])))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Validation error:   </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s2">&quot;test_score&quot;</span><span class="p">])))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train error:   0.166
+Validation error:   0.190
 </pre></div>
 </div>
 </div>
@@ -1460,6 +1766,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train error:   0.000
+Validation error:   0.185
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>If your model is very complex, like a <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier(max_depth=None)</span></code>, then you will learn unreliable patterns in order to get every single training example correct.</p></li>
@@ -1468,9 +1780,7 @@ document.write(`
 <span class="math notranslate nohighlight">\(E_\textrm{train} \lt E_\textrm{best}  \lt E_\textrm{valid}\)</span></p></li>
 <li><p>In general, if <span class="math notranslate nohighlight">\(E_\textrm{train}\)</span> is low, we are likely to be in the overfitting scenario. It is fairly common to have at least a bit of this.</p></li>
 </ul>
-<ul class="simple">
-<li><p>So the validation error does not necessarily decrease with the training error.</p></li>
-</ul>
+<p>This means that the validation error does not necessarily decrease with the training error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1504,6 +1814,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d2db9073ebcbc8a8a1bd2a7d58e69a42d61aa2d18939ce91cc2c1b5ebf0b2525.png" src="../../_images/d2db9073ebcbc8a8a1bd2a7d58e69a42d61aa2d18939ce91cc2c1b5ebf0b2525.png" />
+</div>
 </div>
 <ul class="simple">
 <li><p>Here, for larger depths we observe that the training error is close to 0 but validation error goes up and down.</p></li>
@@ -1522,15 +1835,11 @@ document.write(`
 <li><p>The fundamental trade-off is also called the bias/variance tradeoff in supervised machine learning.</p></li>
 </ul>
 <dl class="simple myst">
-<dt><strong>Bias</strong></dt><dd><p>the tendency to consistently learn the same wrong thing (high bias corresponds to underfitting)</p>
+<dt><strong>Bias</strong></dt><dd><p>the tendency to consistently learn the same wrong thing (high bias corresponds to underfitting). Typical of simple models.</p>
 </dd>
-<dt><strong>Variance</strong></dt><dd><p>the tendency to learn random things irrespective of the real signal (high variance corresponds to overfitting)</p>
+<dt><strong>Variance</strong></dt><dd><p>the tendency to learn random things irrespective of the real signal (high variance corresponds to overfitting). Typical of very complex models.</p>
 </dd>
 </dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Check out <a class="reference external" href="https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf">this article by Pedro Domingos</a> for some approachable explanation on machine learning fundamentals and bias-variance tradeoff.</p>
-</div>
 </section>
 <section id="how-to-pick-a-model-that-would-generalize-better">
 <h3>How to pick a model that would generalize better?<a class="headerlink" href="#how-to-pick-a-model-that-would-generalize-better" title="Link to this heading">#</a></h3>
@@ -1567,6 +1876,147 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean_train_error</th>
+      <th>mean_cv_error</th>
+      <th>std_cv_error</th>
+      <th>std_train_error</th>
+    </tr>
+    <tr>
+      <th>depth</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0.171657</td>
+      <td>0.211250</td>
+      <td>0.048378</td>
+      <td>0.006805</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.160258</td>
+      <td>0.223750</td>
+      <td>0.062723</td>
+      <td>0.007316</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.142467</td>
+      <td>0.204583</td>
+      <td>0.053763</td>
+      <td>0.022848</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.092604</td>
+      <td>0.204167</td>
+      <td>0.070907</td>
+      <td>0.006531</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.083338</td>
+      <td>0.191250</td>
+      <td>0.067120</td>
+      <td>0.010650</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.066251</td>
+      <td>0.197500</td>
+      <td>0.074773</td>
+      <td>0.012019</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.044873</td>
+      <td>0.210417</td>
+      <td>0.089136</td>
+      <td>0.009059</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.030618</td>
+      <td>0.222500</td>
+      <td>0.092669</td>
+      <td>0.010547</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.020653</td>
+      <td>0.190833</td>
+      <td>0.096426</td>
+      <td>0.010294</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.009260</td>
+      <td>0.216250</td>
+      <td>0.097938</td>
+      <td>0.005563</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.005699</td>
+      <td>0.228750</td>
+      <td>0.101387</td>
+      <td>0.004264</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.003561</td>
+      <td>0.248333</td>
+      <td>0.089485</td>
+      <td>0.004769</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.000000</td>
+      <td>0.223333</td>
+      <td>0.089892</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.000000</td>
+      <td>0.229583</td>
+      <td>0.089354</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.000000</td>
+      <td>0.229583</td>
+      <td>0.084870</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="test-score-vs-cross-validation-score">
@@ -1584,6 +2034,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum validation error is 0.191 at max_depth = 9 
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>Let’s pick <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>= 5 and try this model on the test set.</p></li>
@@ -1593,6 +2048,11 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="n">best_depth</span><span class="p">)</span>
 <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error on test set: </span><span class="si">{</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_test</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error on test set: 0.21
 </pre></div>
 </div>
 </div>
@@ -1609,8 +2069,6 @@ document.write(`
 <li><p>We have to be very careful not to violate it while developing our ML pipeline.</p></li>
 <li><p>Even experts end up breaking it sometimes which leads to misleading results and lack of generalization on the real data.</p></li>
 </ul>
-<section id="golden-rule-violation-example-1">
-<h4>Golden rule violation: Example 1<a class="headerlink" href="#golden-rule-violation-example-1" title="Link to this heading">#</a></h4>
 <p><img alt="" src="../../_images/golden_rule_violation.png" /></p>
 <!-- <center>
 <img src='img/golden_rule_violation.png' width="500" height="500" />
@@ -1619,18 +2077,6 @@ document.write(`
 <blockquote>
    ... He attempted to reproduce the research, and found a major flaw: there was some overlap in the data used to both train and test the model. 
 </blockquote>    </section>
-<section id="golden-rule-violation-example-2">
-<h4>Golden rule violation: Example 2<a class="headerlink" href="#golden-rule-violation-example-2" title="Link to this heading">#</a></h4>
-<!-- <center>
-<img src='img/golden_rule_violation_2.png' width="500" height="500" />
-</center>    
- -->
-<p><img alt="" src="../../_images/golden_rule_violation_2.png" /></p>
-<blockquote>
-  ... The Challenge rules state that you must only test your code twice a week, because there’s an element of chance to the results. Baidu has admitted that it used multiple email accounts to test its code roughly 200 times in just under six months – over four times what the rules allow.
-</blockquote>
-</section>
-</section>
 <section id="how-can-we-avoid-violating-golden-rule">
 <h3>How can we avoid violating golden rule?<a class="headerlink" href="#how-can-we-avoid-violating-golden-rule" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -1649,7 +2095,7 @@ document.write(`
 <li><p><strong>Select the best model using cross-validation</strong>: Use <code class="docutils literal notranslate"><span class="pre">cross_validate</span></code> with <code class="docutils literal notranslate"><span class="pre">return_train_score</span> <span class="pre">=</span> <span class="pre">True</span></code> so that we can get access to training scores in each fold. (If we want to plot train vs validation error plots, for instance.)</p></li>
 <li><p><strong>Scoring on test data</strong>: Finally score on the test data with the chosen hyperparameters to examine the generalization performance.</p></li>
 </ul>
-<p><strong>Again, there are many subtleties here we’ll discuss the golden rule multiple times throughout the course.</strong></p>
+<p><strong>Again, there are many subtleties here; we’ll discuss the golden rule multiple times throughout the course.</strong></p>
 <p><br><br><br><br></p>
 </section>
 </section>
@@ -1657,14 +2103,14 @@ document.write(`
 <h2>❓❓ Questions for you<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="iclicker-exercise-3-2">
 <h3>iClicker Exercise 3.2<a class="headerlink" href="#iclicker-exercise-3-2" title="Link to this heading">#</a></h3>
-<p><strong>iClicker cloud join link: https://join.iclicker.com/VYFJ</strong></p>
+<p><strong>iClicker cloud join link: https://join.iclicker.com/RITY</strong></p>
 <p><strong>Select all of the following statements which are TRUE.</strong></p>
 <ul class="simple">
 <li><p>(A) <span class="math notranslate nohighlight">\(k\)</span>-fold cross-validation calls fit <span class="math notranslate nohighlight">\(k\)</span> times.</p></li>
-<li><p>(B) We use cross-validation to get a more robust estimate of model performance.</p></li>
+<li><p>(B) We use cross-validation to get the best hyperparameters for our model.</p></li>
 <li><p>(C) If the mean train accuracy is much higher than the mean cross-validation accuracy it’s likely to be a case of overfitting.</p></li>
 <li><p>(D) The fundamental tradeoff of ML states that as training error goes down, validation error goes up.</p></li>
-<li><p>(E) A decision stump on a complicated classification problem is likely to underfit.</p></li>
+<li><p>(E) When doing 10-fold CV on a Decision Tree of depth 1, the resulting trees will be more similar to each other than when doing 10-fold CV on a Decision Tree of depth 5.</p></li>
 </ul>
 <p><br><br></p>
 </section>
@@ -1715,16 +2161,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-cpsc330-24-py"
+            mode: "conda-env-cpsc330-py"
         },
         kernelOptions: {
-            name: "conda-env-cpsc330-24-py",
+            name: "conda-env-cpsc330-py",
             path: "./lectures/101-103-Giulia-lectures"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-cpsc330-24-py'</script>
+    <script>kernelName = 'conda-env-cpsc330-py'</script>
 
                 </article>
               
@@ -1760,7 +2206,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-video">Generalization [video]</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#big-picture-and-motivation">Big picture and motivation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-complexity-and-training-error">Model complexity and training error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eva-s-questions">🤔 Eva’s questions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-fundamental-goal-of-ml">Generalization: Fundamental goal of ML</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizing-to-unseen-data">Generalizing to unseen data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-error-vs-generalization-error">Training error vs. Generalization error</a></li>
@@ -1775,6 +2220,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-validation-test-split">Train/validation/test split</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-it-matter">Why does it matter</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-data">“Deployment” data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-train-validation-test-and-deployment-data">Summary of train, validation, test, and deployment data</a></li>
 </ul>
@@ -1790,6 +2236,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-using-scikit-learn">Cross-validation using <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-val-score"><code class="docutils literal notranslate"><span class="pre">cross_val_score</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validate"><code class="docutils literal notranslate"><span class="pre">cross_validate</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-details">More details</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#our-typical-supervised-learning-set-up-is-as-follows">Our typical supervised learning set up is as follows:</a></li>
 </ul>
 </li>
@@ -1803,11 +2252,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-vs-variance-tradeoff">Bias vs variance tradeoff</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-pick-a-model-that-would-generalize-better">How to pick a model that would generalize better?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-score-vs-cross-validation-score">test score vs. cross-validation score</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-golden-rule">The golden rule <a name="4"></a></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#golden-rule-violation-example-1">Golden rule violation: Example 1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#golden-rule-violation-example-2">Golden rule violation: Example 2</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-golden-rule">The golden rule <a name="4"></a></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-we-avoid-violating-golden-rule">How can we avoid violating golden rule?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#here-is-the-workflow-we-ll-generally-follow">Here is the workflow we’ll generally follow.</a></li>
 </ul>

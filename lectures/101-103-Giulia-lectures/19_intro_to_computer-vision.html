@@ -422,7 +422,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">Transfer learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagenet">ImageNet</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pre-trained-models-out-of-the-box">Using pre-trained models out-of-the-box</a></li>
 </ul>
 </li>
@@ -484,6 +483,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Giulia\OneDrive - UBC\Github\cpsc330-2024W2\lectures\code\utils.py:46: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+  new_text = re.sub(&#39;samples = \d+\n&#39;, &#39;&#39;, text.get_text()) # Hide samples
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="learning-objectives">
@@ -533,13 +538,13 @@ document.write(`
 <li><p>the one-vs.-one approach</p></li>
 </ul>
 </li>
+<li><p>Check out <a class="reference internal" href="#appendixB_multiclass-classification.html"><span class="xref myst">appendixB</span></a> for more details.</p></li>
 </ul>
+<p>Let’s look at a multiclass classification with logistic regression.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mglearn</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_blobs</span>
-
-<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">centers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
@@ -553,7 +558,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e5246271fd63590c054d66bec81e4f685c7ca8aa001b593548daeaace34d3f20.png" src="../../_images/e5246271fd63590c054d66bec81e4f685c7ca8aa001b593548daeaace34d3f20.png" />
+<img alt="../../_images/76a13e151fb44859b39d45766cc4c6d379938b7ff7ddbeb29e47ef65b546301c.png" src="../../_images/76a13e151fb44859b39d45766cc4c6d379938b7ff7ddbeb29e47ef65b546301c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -566,7 +571,8 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html"><style>#sk-container-id-1 {
   /* Definition of color scheme common for light and dark mode */
-  --sklearn-color-text: black;
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
   --sklearn-color-line: gray;
   /* Definition of color scheme for unfitted estimators */
   --sklearn-color-unfitted-level-0: #fff5e6;
@@ -711,12 +717,21 @@ clickable and can be expanded/collapsed.
 /* Toggleable label */
 #sk-container-id-1 label.sk-toggleable__label {
   cursor: pointer;
-  display: block;
+  display: flex;
   width: 100%;
   margin-bottom: 0;
   padding: 0.5em;
   box-sizing: border-box;
   text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-1 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
 }
 
 #sk-container-id-1 label.sk-toggleable__label-arrow:before {
@@ -869,7 +884,8 @@ a:visited.sk-estimator-doc-link {
   height: 1em;
   width: 1em;
   text-decoration: none !important;
-  margin-left: 1ex;
+  margin-left: 0.5em;
+  text-align: center;
   /* unfitted */
   border: var(--sklearn-color-unfitted-level-1) 1pt solid;
   color: var(--sklearn-color-unfitted-level-1);
@@ -968,7 +984,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-3);
 }
-</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LogisticRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;LogisticRegression<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>LogisticRegression()</pre></div> </div></div></div></div></div></div>
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LogisticRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LogisticRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>LogisticRegression()</pre></div> </div></div></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1018,7 +1034,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.64417243,  5.10584063,  1.09706504, -5.55873323])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.64417243,  5.10584063,  1.09706504, -5.55873324])
 </pre></div>
 </div>
 </div>
@@ -1055,7 +1071,7 @@ $<span class="math notranslate nohighlight">\(\frac{1}{1+e^{-x}}\)</span>$</p></
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4.10793260e-03, 2.31298589e-08, 5.83848728e-06, 9.95886206e-01])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4.10793260e-03, 2.31298590e-08, 5.83848731e-06, 9.95886206e-01])
 </pre></div>
 </div>
 </div>
@@ -1085,16 +1101,6 @@ $<span class="math notranslate nohighlight">\(\frac{1}{1+e^{-x}}\)</span>$</p></
 </div>
 </div>
 </div>
-<p>For models such as SVMs which do not naturally extend to multiclass classification, a common technique is to reduce multiclass classication into several instances of binary classification problems.</p>
-<ul class="simple">
-<li><p>Two kind of “hacky” ways to reduce multi-class classification into binary classification:</p>
-<ul>
-<li><p>the one-vs.-rest approach</p></li>
-<li><p>the one-vs.-one approach</p></li>
-</ul>
-</li>
-<li><p>Check out <a class="reference internal" href="#appendixB_multiclass-classification.html"><span class="xref myst">appendixB</span></a> for more details.</p></li>
-</ul>
 <p><br><br><br><br></p>
 </section>
 </section>
@@ -1119,7 +1125,7 @@ $<span class="math notranslate nohighlight">\(\frac{1}{1+e^{-x}}\)</span>$</p></
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bb1f2c14942463fad0ba9b7753766fe7e777024a1efc87a808f23d6efb04a989.svg" src="../../_images/bb1f2c14942463fad0ba9b7753766fe7e777024a1efc87a808f23d6efb04a989.svg" />
+<img alt="../../_images/9802df43f891a430b9abaaf3b966adcc262fb4da8c31530d686c616c82946972.svg" src="../../_images/9802df43f891a430b9abaaf3b966adcc262fb4da8c31530d686c616c82946972.svg" />
 </div>
 </div>
 <ul class="simple">
@@ -1134,7 +1140,7 @@ $<span class="math notranslate nohighlight">\(\frac{1}{1+e^{-x}}\)</span>$</p></
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c8a5780cbcd545af44a286fdfe441404894c83747435d6a5b0a66dbeb400b16b.svg" src="../../_images/c8a5780cbcd545af44a286fdfe441404894c83747435d6a5b0a66dbeb400b16b.svg" />
+<img alt="../../_images/3790569389d37d9ea74e2a4269c366b2edbae1df0aeeff440fb7e37faaeccec5.svg" src="../../_images/3790569389d37d9ea74e2a4269c366b2edbae1df0aeeff440fb7e37faaeccec5.svg" />
 </div>
 </div>
 <ul class="simple">
@@ -1147,21 +1153,9 @@ $<span class="math notranslate nohighlight">\(\frac{1}{1+e^{-x}}\)</span>$</p></
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6962db1e2c6d42f8a4a3cf3ae44d6f9d402f84c86247cd6f1277a9027fdf08f2.svg" src="../../_images/6962db1e2c6d42f8a4a3cf3ae44d6f9d402f84c86247cd6f1277a9027fdf08f2.svg" />
+<img alt="../../_images/916c5dff417ae52fd8b977847bad9cd06126441e9b35c27d975fd507278bfdc6.svg" src="../../_images/916c5dff417ae52fd8b977847bad9cd06126441e9b35c27d975fd507278bfdc6.svg" />
 </div>
 </div>
-<ul class="simple">
-<li><p>At a very high level you can also think of them as <code class="docutils literal notranslate"><span class="pre">Pipelines</span></code> in <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p></li>
-<li><p>A neural network is a model that’s sort of like its own pipeline</p>
-<ul>
-<li><p>It involves a series of transformations (“layers”) internally.</p></li>
-<li><p>The output is the prediction.</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="" src="../../_images/pipeline.png" /></p>
-<!-- <img src='./img/pipeline.png' width="800"> -->
-<p><a class="reference external" href="https://amueller.github.io/COMS4995-s20/slides/aml-04-preprocessing/#18">Source</a></p>
 <ul class="simple">
 <li><p>Important question: how many features before/after transformation.</p>
 <ul>
@@ -1174,8 +1168,6 @@ $<span class="math notranslate nohighlight">\(\frac{1}{1+e^{-x}}\)</span>$</p></
 <li><p>In the above, it goes from 4 to 3 to 3 to 1.</p></li>
 </ul>
 </li>
-</ul>
-<ul class="simple">
 <li><p>To make them really powerful compared to the linear models, we apply a non-linear function to the weighted sum for each hidden node.</p></li>
 </ul>
 <section id="terminology">
@@ -1353,17 +1345,6 @@ $<span class="math notranslate nohighlight">\(\frac{1}{1+e^{-x}}\)</span>$</p></
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1373,7 +1354,7 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bfc6fbc48f41e2f18feb1029f323d0784676280b1074d30f6ccd70a39adddea4.png" src="../../_images/bfc6fbc48f41e2f18feb1029f323d0784676280b1074d30f6ccd70a39adddea4.png" />
+<img alt="../../_images/00ea4193f9e77142797ae216cb5d98ccdafa05860e8f873c1abec1de9c03eb7b.png" src="../../_images/00ea4193f9e77142797ae216cb5d98ccdafa05860e8f873c1abec1de9c03eb7b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1389,7 +1370,7 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Classes: [&#39;cat&#39;, &#39;dog&#39;, &#39;wild&#39;]
 Class count: 50, 50, 50
 Samples: 150
-First sample: (&#39;/Users/gtoti/Documents/GitHub/cpsc330-2024W1/lectures/data/animal_faces/train/cat/flickr_cat_000002.jpg&#39;, 0)
+First sample: (&#39;C:\\Users\\Giulia\\OneDrive - UBC\\Github\\cpsc330-2024W2\\lectures\\data/animal_faces\\train\\cat\\flickr_cat_000002.jpg&#39;, 0)
 </pre></div>
 </div>
 </div>
@@ -1484,7 +1465,8 @@ First sample: (&#39;/Users/gtoti/Documents/GitHub/cpsc330-2024W1/lectures/data/a
 <div class="cell_output docutils container">
 <div class="output text_html"><style>#sk-container-id-2 {
   /* Definition of color scheme common for light and dark mode */
-  --sklearn-color-text: black;
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
   --sklearn-color-line: gray;
   /* Definition of color scheme for unfitted estimators */
   --sklearn-color-unfitted-level-0: #fff5e6;
@@ -1629,12 +1611,21 @@ clickable and can be expanded/collapsed.
 /* Toggleable label */
 #sk-container-id-2 label.sk-toggleable__label {
   cursor: pointer;
-  display: block;
+  display: flex;
   width: 100%;
   margin-bottom: 0;
   padding: 0.5em;
   box-sizing: border-box;
   text-align: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+#sk-container-id-2 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
 }
 
 #sk-container-id-2 label.sk-toggleable__label-arrow:before {
@@ -1787,7 +1778,8 @@ a:visited.sk-estimator-doc-link {
   height: 1em;
   width: 1em;
   text-decoration: none !important;
-  margin-left: 1ex;
+  margin-left: 0.5em;
+  text-align: center;
   /* unfitted */
   border: var(--sklearn-color-unfitted-level-1) 1pt solid;
   color: var(--sklearn-color-unfitted-level-1);
@@ -1887,8 +1879,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   background-color: var(--sklearn-color-fitted-level-3);
 }
 </style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;standardscaler&#x27;, StandardScaler()),
-                (&#x27;logisticregression&#x27;, LogisticRegression(max_iter=3000))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" ><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;Pipeline<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;standardscaler&#x27;, StandardScaler()),
-                (&#x27;logisticregression&#x27;, LogisticRegression(max_iter=3000))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;StandardScaler<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox" ><label for="sk-estimator-id-4" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;LogisticRegression<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a></label><div class="sk-toggleable__content fitted"><pre>LogisticRegression(max_iter=3000)</pre></div> </div></div></div></div></div></div></div></div>
+                (&#x27;logisticregression&#x27;, LogisticRegression(max_iter=3000))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" ><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>Pipeline</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;standardscaler&#x27;, StandardScaler()),
+                (&#x27;logisticregression&#x27;, LogisticRegression(max_iter=3000))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>StandardScaler</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></div></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox" ><label for="sk-estimator-id-4" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LogisticRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a></div></label><div class="sk-toggleable__content fitted"><pre>LogisticRegression(max_iter=3000)</pre></div> </div></div></div></div></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1940,7 +1932,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c86e66eae05477d4596cc98d42af2d3c5e8853bf495ce37c13b7b72ef4cc8731.png" src="../../_images/c86e66eae05477d4596cc98d42af2d3c5e8853bf495ce37c13b7b72ef4cc8731.png" />
+<img alt="../../_images/f93f8f59e4fc26764f59481e4f4037b9710bd54f0a47e422e53d5936661ec3a5.png" src="../../_images/f93f8f59e4fc26764f59481e4f4037b9710bd54f0a47e422e53d5936661ec3a5.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1953,8 +1945,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.36862746, 0.39607844, 0.52156866, ..., 0.99607843, 0.99607843,
-       0.99607843], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.2784314 , 0.25882354, 0.23529412, ..., 0.2901961 , 0.25490198,
+       0.24313726], dtype=float32)
 </pre></div>
 </div>
 </div>
@@ -1986,8 +1978,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <li><p>There are many deep learning architectures out there that have been very successful across a wide range of problem, e.g.: AlexNet, VGG, ResNet, Inception, MobileNet, etc.</p></li>
 <li><p>Many of these are trained on famous datasets such as ImageNet (which contains 1.2 million labelled images with 1000 categories)</p></li>
 </ul>
-<section id="imagenet">
-<h3>ImageNet<a class="headerlink" href="#imagenet" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.image-net.org/">ImageNet</a> is an image dataset that became a very popular benchmark in the field ~10 years ago.</p>
 <ul>
@@ -2032,7 +2022,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <li><p>We will explore the first two approaches.</p></li>
 </ul>
 <p><br><br></p>
-</section>
 <section id="using-pre-trained-models-out-of-the-box">
 <h3>Using pre-trained models out-of-the-box<a class="headerlink" href="#using-pre-trained-models-out-of-the-box" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -2098,25 +2087,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cbb0ddddc61d67398c6c8057769f46f0a84c50aec8e6566b0586e99474580520.png" src="../../_images/cbb0ddddc61d67398c6c8057769f46f0a84c50aec8e6566b0586e99474580520.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                         Class  Probability score
-                     tiger cat              0.353
-              tabby, tabby cat              0.207
-               lynx, catamount              0.050
-Pembroke, Pembroke Welsh corgi              0.046
---------------------------------------------------------------
-</pre></div>
-</div>
-<img alt="../../_images/d82c91eaa17720fbe7c26980d7262f9242ff8efc07fa20b7de7c3f9cd4c47105.png" src="../../_images/d82c91eaa17720fbe7c26980d7262f9242ff8efc07fa20b7de7c3f9cd4c47105.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     Class  Probability score
-         cheetah, chetah, Acinonyx jubatus              0.983
-                  leopard, Panthera pardus              0.012
-jaguar, panther, Panthera onca, Felis onca              0.004
-       snow leopard, ounce, Panthera uncia              0.001
---------------------------------------------------------------
-</pre></div>
-</div>
-<img alt="../../_images/2019b92a3f97a6e5c64898ba1d35a4434cdb360a496e4e7633376db2386500cd.png" src="../../_images/2019b92a3f97a6e5c64898ba1d35a4434cdb360a496e4e7633376db2386500cd.png" />
+<img alt="../../_images/b9b68287bf4ae836ee407ea7de9e11e3b5188b10000f475f514d64a40e376a58.png" src="../../_images/b9b68287bf4ae836ee407ea7de9e11e3b5188b10000f475f514d64a40e376a58.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                   Class  Probability score
                                  macaque              0.714
 patas, hussar monkey, Erythrocebus patas              0.122
@@ -2125,7 +2096,25 @@ patas, hussar monkey, Erythrocebus patas              0.122
 --------------------------------------------------------------
 </pre></div>
 </div>
-<img alt="../../_images/8738eba89ba7be15536186cec1e44fcfdc6ed689b57e63a602f3632e9574d87d.png" src="../../_images/8738eba89ba7be15536186cec1e44fcfdc6ed689b57e63a602f3632e9574d87d.png" />
+<img alt="../../_images/80b0e7a44ddd54f2125abc3eb7633ff3974a768947ae595196dabaf20802b9ae.png" src="../../_images/80b0e7a44ddd54f2125abc3eb7633ff3974a768947ae595196dabaf20802b9ae.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                         Class  Probability score
+                     tiger cat              0.353
+              tabby, tabby cat              0.207
+               lynx, catamount              0.050
+Pembroke, Pembroke Welsh corgi              0.046
+--------------------------------------------------------------
+</pre></div>
+</div>
+<img alt="../../_images/8d54e9647b2d73abaaa9c4b098d65095b4f3ab77334b28af66f730077b08aab0.png" src="../../_images/8d54e9647b2d73abaaa9c4b098d65095b4f3ab77334b28af66f730077b08aab0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                     Class  Probability score
+         cheetah, chetah, Acinonyx jubatus              0.983
+                  leopard, Panthera pardus              0.012
+jaguar, panther, Panthera onca, Felis onca              0.004
+       snow leopard, ounce, Panthera uncia              0.001
+--------------------------------------------------------------
+</pre></div>
+</div>
+<img alt="../../_images/b315ed8fa044c796223d166f1f55eb50675c2f95715b5f8251cf9f6b5dac2c60.png" src="../../_images/b315ed8fa044c796223d166f1f55eb50675c2f95715b5f8251cf9f6b5dac2c60.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        Class  Probability score
 Walker hound, Walker foxhound              0.580
              English foxhound              0.091
@@ -2160,25 +2149,7 @@ Walker hound, Walker foxhound              0.580
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5db23f44ba8a5d6f706ccfd8a053c0bded5c0a17d9b15d40d21e7a8b747f2d56.png" src="../../_images/5db23f44ba8a5d6f706ccfd8a053c0bded5c0a17d9b15d40d21e7a8b747f2d56.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                   Class  Probability score
-                                       sandbar, sand bar              0.421
-                    seashore, coast, seacoast, sea-coast              0.157
-breakwater, groin, groyne, mole, bulwark, seawall, jetty              0.071
-                                     lakeside, lakeshore              0.036
---------------------------------------------------------------
-</pre></div>
-</div>
-<img alt="../../_images/ea470e29f7cf22ba3603de3dd6af8b090f927c75e0b4dbf6fc1c8b7ae611da1c.png" src="../../_images/ea470e29f7cf22ba3603de3dd6af8b090f927c75e0b4dbf6fc1c8b7ae611da1c.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Class  Probability score
-            obelisk              0.104
-               pole              0.077
-bell cote, bell cot              0.057
-       sliding door              0.045
---------------------------------------------------------------
-</pre></div>
-</div>
-<img alt="../../_images/3da96beae66f5feb93a5cabf82315319c761d33e32720a646bd8971a318a6331.png" src="../../_images/3da96beae66f5feb93a5cabf82315319c761d33e32720a646bd8971a318a6331.png" />
+<img alt="../../_images/e9709227c09b83c6ca67e85cb7bdd2fdda58e3a1ee17399ed14d40ab1b2f7cba.png" src="../../_images/e9709227c09b83c6ca67e85cb7bdd2fdda58e3a1ee17399ed14d40ab1b2f7cba.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                      Class  Probability score
                                         fig              0.637
                                 pomegranate              0.193
@@ -2187,7 +2158,16 @@ grocery store, grocery, food market, market              0.041
 --------------------------------------------------------------
 </pre></div>
 </div>
-<img alt="../../_images/fa64b179c0acec70810f26c70f7f829744c99b224e6acb0bd8ec2f6e285d0a33.png" src="../../_images/fa64b179c0acec70810f26c70f7f829744c99b224e6acb0bd8ec2f6e285d0a33.png" />
+<img alt="../../_images/e0684bc1bb22d4e696b536ea36112f315d43fd2ab7f269bc077f510f86d9d906.png" src="../../_images/e0684bc1bb22d4e696b536ea36112f315d43fd2ab7f269bc077f510f86d9d906.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Class  Probability score
+            obelisk              0.104
+               pole              0.077
+bell cote, bell cot              0.057
+       sliding door              0.045
+--------------------------------------------------------------
+</pre></div>
+</div>
+<img alt="../../_images/59807a275eb5b7155d71f956c26358de876861e8fafbe216207a562ab2c2af9c.png" src="../../_images/59807a275eb5b7155d71f956c26358de876861e8fafbe216207a562ab2c2af9c.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Class  Probability score
     castle              0.056
      altar              0.056
@@ -2196,16 +2176,7 @@ park bench              0.049
 --------------------------------------------------------------
 </pre></div>
 </div>
-<img alt="../../_images/1e62a94584768cf63a8d57f944b23109ef7b5dc9f9dd672dc7ee3b7104a8eda1.png" src="../../_images/1e62a94584768cf63a8d57f944b23109ef7b5dc9f9dd672dc7ee3b7104a8eda1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      Class  Probability score
-                 totem pole              0.987
-                       pole              0.011
-                    sundial              0.000
-pedestal, plinth, footstall              0.000
---------------------------------------------------------------
-</pre></div>
-</div>
-<img alt="../../_images/873950d0ce4567dab1bc2026761bab931cec25f965bc3694a82d685026024f6b.png" src="../../_images/873950d0ce4567dab1bc2026761bab931cec25f965bc3694a82d685026024f6b.png" />
+<img alt="../../_images/cf34b8628810d86b1026f296dcd811d43980ceb53566fa6793745896c3d0e64c.png" src="../../_images/cf34b8628810d86b1026f296dcd811d43980ceb53566fa6793745896c3d0e64c.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                    Class  Probability score
                                       lakeside, lakeshore              0.568
 worm fence, snake fence, snake-rail fence, Virginia fence              0.180
@@ -2214,7 +2185,25 @@ worm fence, snake fence, snake-rail fence, Virginia fence              0.180
 --------------------------------------------------------------
 </pre></div>
 </div>
-<img alt="../../_images/301425c7fb155e2baec9b52b8b6c8c5557af39f93a5061255e1464a3b55c0aac.png" src="../../_images/301425c7fb155e2baec9b52b8b6c8c5557af39f93a5061255e1464a3b55c0aac.png" />
+<img alt="../../_images/eb4ad329d20f7af7fb40389c5fe7fac778d8f6377cb2df9c0c9706610d96d8ff.png" src="../../_images/eb4ad329d20f7af7fb40389c5fe7fac778d8f6377cb2df9c0c9706610d96d8ff.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      Class  Probability score
+                 totem pole              0.987
+                       pole              0.011
+                    sundial              0.000
+pedestal, plinth, footstall              0.000
+--------------------------------------------------------------
+</pre></div>
+</div>
+<img alt="../../_images/858c1c074e8a628eccd9cde9c70796e6971885152d32054640b0ca1477377d95.png" src="../../_images/858c1c074e8a628eccd9cde9c70796e6971885152d32054640b0ca1477377d95.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                   Class  Probability score
+                                       sandbar, sand bar              0.421
+                    seashore, coast, seacoast, sea-coast              0.157
+breakwater, groin, groyne, mole, bulwark, seawall, jetty              0.071
+                                     lakeside, lakeshore              0.036
+--------------------------------------------------------------
+</pre></div>
+</div>
+<img alt="../../_images/6973cd1ff730871c2ba9dc7b2e804c1c886584a386a93249938715c1d1aedebd.png" src="../../_images/6973cd1ff730871c2ba9dc7b2e804c1c886584a386a93249938715c1d1aedebd.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                               Class  Probability score
                                          toilet seat              0.171
                                           safety pin              0.060
@@ -2223,7 +2212,7 @@ bannister, banister, balustrade, balusters, handrail              0.039
 --------------------------------------------------------------
 </pre></div>
 </div>
-<img alt="../../_images/83a00bc4a86f72913725634fdf6d06e4d61ae4350164fc531b7d02d5e51ee8a8.png" src="../../_images/83a00bc4a86f72913725634fdf6d06e4d61ae4350164fc531b7d02d5e51ee8a8.png" />
+<img alt="../../_images/d76bd58ceb1f6ce3a40face50bbf0f8cd69ee147ed0e4b16f685343b0cb7170c.png" src="../../_images/d76bd58ceb1f6ce3a40face50bbf0f8cd69ee147ed0e4b16f685343b0cb7170c.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              Class  Probability score
      patio, terrace              0.213
            fountain              0.164
@@ -2334,18 +2323,6 @@ lakeside, lakeshore              0.097
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2355,7 +2332,7 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f3435658ef3f7c45c2b6c0180508a71135d3cde2b3756c9a2cfa4106c4558059.png" src="../../_images/f3435658ef3f7c45c2b6c0180508a71135d3cde2b3756c9a2cfa4106c4558059.png" />
+<img alt="../../_images/47e3b2bc42425863deffb417c0a6d9c620045307d96922d42b233f5446f52d61.png" src="../../_images/47e3b2bc42425863deffb417c0a6d9c620045307d96922d42b233f5446f52d61.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2371,7 +2348,7 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Classes: [&#39;cat&#39;, &#39;dog&#39;, &#39;wild&#39;]
 Class count: 50, 50, 50
 Samples: 150
-First sample: (&#39;/Users/gtoti/Documents/GitHub/cpsc330-2024W1/lectures/data/animal_faces/train/cat/flickr_cat_000002.jpg&#39;, 0)
+First sample: (&#39;C:\\Users\\Giulia\\OneDrive - UBC\\Github\\cpsc330-2024W2\\lectures\\data/animal_faces\\train\\cat\\flickr_cat_000002.jpg&#39;, 0)
 </pre></div>
 </div>
 </div>
@@ -2412,26 +2389,6 @@ First sample: (&#39;/Users/gtoti/Documents/GitHub/cpsc330-2024W1/lectures/data/a
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">Z_valid</span><span class="p">,</span> <span class="n">y_valid</span> <span class="o">=</span> <span class="n">get_features</span><span class="p">(</span>
     <span class="n">densenet</span><span class="p">,</span> <span class="n">dataloaders</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">],</span> <span class="n">dataloaders</span><span class="p">[</span><span class="s2">&quot;valid&quot;</span><span class="p">]</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
-Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
 </pre></div>
 </div>
 </div>
@@ -2504,123 +2461,123 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.000314</td>
-      <td>0.012780</td>
-      <td>0.001218</td>
-      <td>0.000419</td>
-      <td>0.149738</td>
-      <td>0.686221</td>
-      <td>0.000395</td>
-      <td>0.003002</td>
-      <td>0.259892</td>
-      <td>0.000367</td>
+      <td>0.000193</td>
+      <td>0.004259</td>
+      <td>0.001676</td>
+      <td>0.004385</td>
+      <td>0.089425</td>
+      <td>0.127754</td>
+      <td>0.000610</td>
+      <td>0.004082</td>
+      <td>0.375836</td>
+      <td>0.000281</td>
       <td>...</td>
-      <td>0.476957</td>
-      <td>0.363004</td>
-      <td>0.416335</td>
-      <td>0.009081</td>
-      <td>0.036484</td>
-      <td>0.175509</td>
-      <td>0.000000</td>
-      <td>0.162972</td>
-      <td>0.006990</td>
-      <td>1.557315</td>
+      <td>1.644157</td>
+      <td>0.268171</td>
+      <td>0.289942</td>
+      <td>2.241363</td>
+      <td>0.071670</td>
+      <td>0.591305</td>
+      <td>0.167739</td>
+      <td>1.970204</td>
+      <td>0.483400</td>
+      <td>0.668457</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000394</td>
-      <td>0.003121</td>
-      <td>0.001451</td>
-      <td>0.000837</td>
-      <td>0.161817</td>
-      <td>0.740485</td>
-      <td>0.001043</td>
-      <td>0.001622</td>
-      <td>0.214080</td>
-      <td>0.000184</td>
+      <td>0.000326</td>
+      <td>0.001748</td>
+      <td>0.003865</td>
+      <td>0.002200</td>
+      <td>0.094595</td>
+      <td>0.796982</td>
+      <td>0.000542</td>
+      <td>0.001949</td>
+      <td>0.206962</td>
+      <td>0.000338</td>
       <td>...</td>
-      <td>0.269493</td>
-      <td>0.314986</td>
-      <td>0.167788</td>
-      <td>0.012516</td>
-      <td>0.548106</td>
-      <td>0.737186</td>
-      <td>2.771250</td>
-      <td>0.711778</td>
-      <td>0.922930</td>
-      <td>1.002003</td>
+      <td>0.715456</td>
+      <td>0.526688</td>
+      <td>0.644886</td>
+      <td>0.831329</td>
+      <td>0.178603</td>
+      <td>1.698192</td>
+      <td>0.614902</td>
+      <td>0.348283</td>
+      <td>0.597161</td>
+      <td>0.014462</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000469</td>
-      <td>0.002094</td>
-      <td>0.003777</td>
-      <td>0.002629</td>
-      <td>0.056090</td>
-      <td>0.481665</td>
-      <td>0.000781</td>
-      <td>0.002938</td>
-      <td>0.306946</td>
-      <td>0.000349</td>
+      <td>0.000360</td>
+      <td>0.002835</td>
+      <td>0.005725</td>
+      <td>0.003952</td>
+      <td>0.093464</td>
+      <td>0.531192</td>
+      <td>0.000363</td>
+      <td>0.003376</td>
+      <td>0.266673</td>
+      <td>0.000274</td>
       <td>...</td>
-      <td>3.017158</td>
-      <td>1.015458</td>
-      <td>0.949892</td>
-      <td>1.303380</td>
-      <td>1.579836</td>
-      <td>1.437588</td>
-      <td>2.156760</td>
-      <td>2.159197</td>
-      <td>0.311045</td>
-      <td>2.631511</td>
+      <td>2.375956</td>
+      <td>0.143774</td>
+      <td>0.532030</td>
+      <td>0.995511</td>
+      <td>1.149036</td>
+      <td>0.951852</td>
+      <td>0.996293</td>
+      <td>0.805050</td>
+      <td>1.466547</td>
+      <td>0.605102</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000407</td>
-      <td>0.001641</td>
-      <td>0.002493</td>
-      <td>0.002175</td>
-      <td>0.091890</td>
-      <td>0.209233</td>
-      <td>0.000441</td>
-      <td>0.003098</td>
-      <td>0.303395</td>
-      <td>0.000254</td>
+      <td>0.000337</td>
+      <td>0.003710</td>
+      <td>0.002402</td>
+      <td>0.002544</td>
+      <td>0.039716</td>
+      <td>1.097816</td>
+      <td>0.000851</td>
+      <td>0.001943</td>
+      <td>0.354467</td>
+      <td>0.000235</td>
       <td>...</td>
-      <td>1.573439</td>
-      <td>0.575524</td>
-      <td>0.588429</td>
-      <td>0.205897</td>
-      <td>0.039646</td>
-      <td>0.947311</td>
-      <td>0.869311</td>
-      <td>2.559459</td>
-      <td>2.240885</td>
-      <td>0.412880</td>
+      <td>0.478358</td>
+      <td>3.211429</td>
+      <td>0.083372</td>
+      <td>0.016417</td>
+      <td>1.592657</td>
+      <td>1.258897</td>
+      <td>0.901026</td>
+      <td>3.417982</td>
+      <td>0.224012</td>
+      <td>0.577268</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000651</td>
-      <td>0.006221</td>
-      <td>0.002741</td>
-      <td>0.000561</td>
-      <td>0.111158</td>
-      <td>0.925524</td>
-      <td>0.000723</td>
-      <td>0.003589</td>
-      <td>0.297121</td>
-      <td>0.000553</td>
+      <td>0.000212</td>
+      <td>0.003422</td>
+      <td>0.003189</td>
+      <td>0.001793</td>
+      <td>0.072739</td>
+      <td>0.357509</td>
+      <td>0.000796</td>
+      <td>0.005093</td>
+      <td>0.173981</td>
+      <td>0.000233</td>
       <td>...</td>
-      <td>1.529008</td>
-      <td>0.433463</td>
-      <td>0.225723</td>
-      <td>0.342218</td>
-      <td>0.164489</td>
-      <td>0.038198</td>
-      <td>0.227794</td>
-      <td>0.607996</td>
-      <td>0.253003</td>
-      <td>5.604700</td>
+      <td>0.505569</td>
+      <td>1.057689</td>
+      <td>0.107711</td>
+      <td>1.266702</td>
+      <td>2.548849</td>
+      <td>0.554823</td>
+      <td>1.335049</td>
+      <td>2.082628</td>
+      <td>1.007379</td>
+      <td>0.142397</td>
     </tr>
   </tbody>
 </table>
@@ -2652,7 +2609,7 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.92
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8733333333333333
 </pre></div>
 </div>
 </div>
@@ -2667,7 +2624,7 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 <section id="object-detection">
 <h2>Object detection<a class="headerlink" href="#object-detection" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Another useful task and tool to know is object detection using YOLO (You Only Look Once) model.</p></li>
+<li><p>Another useful task and tool to know is object detection using YOLO model.</p></li>
 <li><p>Let’s identify objects in a sample image using a pretrained model called YOLO8.</p></li>
 <li><p>List the objects present in this image.</p></li>
 </ul>
@@ -2713,27 +2670,18 @@ Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) S
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8n.pt to &#39;yolov8n.pt&#39;...
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 6.25M/6.25M [00:00&lt;00:00, 16.6MB/s]
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/gtoti/opt/anaconda3/envs/cpsc330-24/lib/python3.12/site-packages/ultralytics/utils/torch_utils.py:219: UserWarning: Cannot set number of intraop threads after parallel work has started or after set_num_threads call when using native parallel backend (Triggered internally at /Users/runner/work/_temp/anaconda/conda-bld/pytorch_1711403213615/work/aten/src/ATen/ParallelNative.cpp:228.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Giulia\anaconda3\envs\cpsc330\Lib\site-packages\ultralytics\utils\torch_utils.py:227: UserWarning: Cannot set number of intraop threads after parallel work has started or after set_num_threads call when using native parallel backend (Triggered internally at C:\bld\libtorch_1741738354177\work\aten\src\ATen\ParallelNative.cpp:228.)
   torch.set_num_threads(NUM_THREADS)  # reset OMP_NUM_THREADS for cpu training
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>image 1/1 /Users/gtoti/Documents/GitHub/cpsc330-2024W1/lectures/data/yolo_test/3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 341.3ms
-Speed: 7.9ms preprocess, 341.3ms inference, 20.0ms postprocess per image at shape (1, 3, 512, 640)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>image 1/1 C:\Users\Giulia\OneDrive - UBC\Github\cpsc330-2024W2\lectures\data\yolo_test\3356700488_183566145b.jpg: 512x640 4 persons, 2 cars, 1 stop sign, 243.9ms
+Speed: 3.2ms preprocess, 243.9ms inference, 1.9ms postprocess per image at shape (1, 3, 512, 640)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[W NNPACK.cpp:64] Could not initialize NNPACK! Reason: Unsupported hardware.
-</pre></div>
-</div>
-<img alt="../../_images/1559e83f737354da45f9400fc3bacc0cd283c364bf0b4ad13a45fe60c080f7b8.png" src="../../_images/1559e83f737354da45f9400fc3bacc0cd283c364bf0b4ad13a45fe60c080f7b8.png" />
+<img alt="../../_images/d9e89bba43989018eaa3ce5e0ae6562356d7c9dd8581d68fadb719baf482c12e.png" src="../../_images/d9e89bba43989018eaa3ce5e0ae6562356d7c9dd8581d68fadb719baf482c12e.png" />
 </div>
 </div>
 <p><br><br><br><br></p>
@@ -2797,16 +2745,16 @@ Speed: 7.9ms preprocess, 341.3ms inference, 20.0ms postprocess per image at shap
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-cpsc330-24-py"
+            mode: "cpsc330"
         },
         kernelOptions: {
-            name: "conda-env-cpsc330-24-py",
+            name: "cpsc330",
             path: "./lectures/101-103-Giulia-lectures"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-cpsc330-24-py'</script>
+    <script>kernelName = 'cpsc330'</script>
 
                 </article>
               
@@ -2864,7 +2812,6 @@ Speed: 7.9ms preprocess, 341.3ms inference, 20.0ms postprocess per image at shap
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">Transfer learning</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagenet">ImageNet</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pre-trained-models-out-of-the-box">Using pre-trained models out-of-the-box</a></li>
 </ul>
 </li>

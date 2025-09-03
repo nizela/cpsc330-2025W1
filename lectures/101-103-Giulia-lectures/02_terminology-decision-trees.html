@@ -392,14 +392,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-announcements-los">Imports, Announcements, LOs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology-video">Terminology [video]</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#big-picture-and-datasets">Big picture and datasets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-datasets">Toy datasets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-supervised-machine-learning">Recap: Supervised machine learning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data">Tabular data</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tabular-data-for-grade-prediction">Example: Tabular data for grade prediction</a></li>
@@ -408,17 +404,11 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning-vs-unsupervised-learning">Supervised learning vs. Unsupervised learning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-vs-regression">Classification vs. Regression</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tabular-data-for-the-housing-price-prediction">Example: Tabular data for the housing price prediction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-1-select-all-of-the-following-statements-which-are-examples-of-supervised-machine-learning">Exercise 2.1 Select all of the following statements which are examples of supervised machine learning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-2-supervised-vs-unsupervised">iClicker Exercise 2.2 Supervised vs unsupervised</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-3-classification-vs-regression">iClicker Exercise 2.3 Classification vs regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-1-supervised-vs-unsupervised">iClicker Exercise 2.1 Supervised vs unsupervised</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-2-classification-vs-regression">iClicker Exercise 2.2 Classification vs regression</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baselines-video">Baselines [video]</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning-reminder">Supervised learning (Reminder)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baselines">Baselines</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dummyclassifier"><code class="docutils literal notranslate"><span class="pre">DummyClassifier</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-train-a-classifier-using-sklearn">Steps to train a classifier using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code></a><ul class="nav section-nav flex-column">
@@ -434,8 +424,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dummyregressor"><code class="docutils literal notranslate"><span class="pre">DummyRegressor</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-4">Exercise 2.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-3">Exercise 2.3</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-5-min">Break (5 min)</a></li>
@@ -450,13 +440,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-terminology-related-to-trees">Some terminology related to trees</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-predict-work">How does <code class="docutils literal notranslate"><span class="pre">predict</span></code> work?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-fit-work">How does <code class="docutils literal notranslate"><span class="pre">fit</span></code> work?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">How does <code class="docutils literal notranslate"><span class="pre">fit</span></code> work?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees-with-continuous-features">Decision trees with continuous features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-for-regression-problems">Decision tree for regression problems</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-5-baselines-and-decision-trees">iClicker Exercise 2.5: Baselines and decision trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-4-baselines-and-decision-trees">iClicker Exercise 2.4: Baselines and decision trees</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-terminology-video">More terminology [video]</a><ul class="nav section-nav flex-column">
@@ -469,10 +458,6 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-boundary-for-max-depth-1">Decision boundary for <code class="docutils literal notranslate"><span class="pre">max_depth=1</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-boundary-for-max-depth-2">Decision boundary for <code class="docutils literal notranslate"><span class="pre">max_depth=2</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-boundary-for-max-depth-5">Decision boundary for <code class="docutils literal notranslate"><span class="pre">max_depth=5</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-predicting-country-using-the-longitude-and-latitude">Example 2: Predicting country using the longitude and latitude</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#real-boundary-between-canada-and-usa">Real boundary between Canada and USA</a></li>
 </ul>
 </li>
 </ul>
@@ -496,10 +481,8 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="lecture-2-terminology-baselines-decision-trees">
 <h1>Lecture 2: Terminology, Baselines, Decision Trees<a class="headerlink" href="#lecture-2-terminology-baselines-decision-trees" title="Link to this heading">#</a></h1>
 <p>UBC 2024-25</p>
-<section id="imports-announcements-los">
-<h2>Imports, Announcements, LOs<a class="headerlink" href="#imports-announcements-los" title="Link to this heading">#</a></h2>
 <section id="imports">
-<h3>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h3>
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
@@ -528,11 +511,17 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Giulia\OneDrive - UBC\Github\cpsc330-2025W1\lectures\code\utils.py:46: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+  new_text = re.sub(&#39;samples = \d+\n&#39;, &#39;&#39;, text.get_text()) # Hide samples
+</pre></div>
+</div>
+</div>
 </div>
 <p><br><br></p>
 </section>
 <section id="learning-outcomes">
-<h3>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h3>
+<h2>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h2>
 <p>From this lecture, you will be able to</p>
 <ul class="simple">
 <li><p>identify whether a given problem could be solved using supervised machine learning or not;</p></li>
@@ -548,32 +537,15 @@ document.write(`
 <li><p>explain the concept of decision boundaries;</p></li>
 <li><p>explain the relation between model complexity and decision boundaries.</p></li>
 </ul>
+<p>This is a condensed version of the notes available <a class="reference external" href="https://github.com/UBC-CS/cpsc330-2024W2/blob/main/lectures/notes/02_terminology-decision-trees.ipynb">here</a>.</p>
 <p><br><br><br><br></p>
-</section>
 </section>
 <section id="terminology-video">
 <h2>Terminology [<a class="reference external" href="https://youtu.be/YNT8n4cXu4A">video</a>]<a class="headerlink" href="#terminology-video" title="Link to this heading">#</a></h2>
 <p>You will see a lot of variable terminology in machine learning and statistics. Let’s familiarize ourselves with some of the basic terminology used in ML.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Check out <a class="reference external" href="https://youtu.be/YNT8n4cXu4A">the accompanying video</a> on this material.</p>
-</div>
 <section id="big-picture-and-datasets">
 <h3>Big picture and datasets<a class="headerlink" href="#big-picture-and-datasets" title="Link to this heading">#</a></h3>
 <p>In this lecture, we’ll talk about our first machine learning model: Decision trees. We will also familiarize ourselves with some common terminology in supervised machine learning.</p>
-</section>
-<section id="toy-datasets">
-<h3>Toy datasets<a class="headerlink" href="#toy-datasets" title="Link to this heading">#</a></h3>
-<p>Later in the course we will use larger datasets from Kaggle, for instance. But for our first couple of lectures, we will be working with the following three toy datasets:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="#data/quiz2-grade-toy-classification.csv"><span class="xref myst">Quiz2 grade prediction classification dataset</span></a></p></li>
-<li><p><a class="reference internal" href="#data/quiz2-grade-toy-regression.csv"><span class="xref myst">Quiz2 grade prediction regression dataset</span></a></p></li>
-<li><p><a class="reference internal" href="#canada_usa_cities.csv"><span class="xref myst">Canada USA cities dataset</span></a></p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If it’s not necessary for you to understand the code, I will put it in one of the files under the <code class="docutils literal notranslate"><span class="pre">code</span></code> directory to avoid clutter in this notebook. For example, most of the plotting code is going to be in <code class="docutils literal notranslate"><span class="pre">code/plotting_functions.py</span></code>.</p>
-</div>
 <p>I’ll be using the following grade prediction toy dataset to demonstrate the terminology. Imagine that you are taking a course with four home work assignments and two quizzes. You and your friends are quite nervous about your quiz2 grades and you want to know how will you do based on your previous performance and some other attributes. So you decide to collect some data from your friends from last year and train a supervised machine learning model for quiz2 grade prediction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -583,6 +555,97 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(21, 8)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ml_experience</th>
+      <th>class_attendance</th>
+      <th>lab1</th>
+      <th>lab2</th>
+      <th>lab3</th>
+      <th>lab4</th>
+      <th>quiz1</th>
+      <th>quiz2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>92</td>
+      <td>93</td>
+      <td>84</td>
+      <td>91</td>
+      <td>92</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>94</td>
+      <td>90</td>
+      <td>80</td>
+      <td>83</td>
+      <td>91</td>
+      <td>not A+</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>78</td>
+      <td>85</td>
+      <td>83</td>
+      <td>80</td>
+      <td>80</td>
+      <td>not A+</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>91</td>
+      <td>94</td>
+      <td>92</td>
+      <td>91</td>
+      <td>89</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>1</td>
+      <td>77</td>
+      <td>83</td>
+      <td>90</td>
+      <td>92</td>
+      <td>85</td>
+      <td>A+</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="recap-supervised-machine-learning">
@@ -613,6 +676,94 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ml_experience</th>
+      <th>class_attendance</th>
+      <th>lab1</th>
+      <th>lab2</th>
+      <th>lab3</th>
+      <th>lab4</th>
+      <th>quiz1</th>
+      <th>quiz2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>92</td>
+      <td>93</td>
+      <td>84</td>
+      <td>91</td>
+      <td>92</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>94</td>
+      <td>90</td>
+      <td>80</td>
+      <td>83</td>
+      <td>91</td>
+      <td>not A+</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>78</td>
+      <td>85</td>
+      <td>83</td>
+      <td>80</td>
+      <td>80</td>
+      <td>not A+</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>91</td>
+      <td>94</td>
+      <td>92</td>
+      <td>91</td>
+      <td>89</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>1</td>
+      <td>77</td>
+      <td>83</td>
+      <td>90</td>
+      <td>92</td>
+      <td>85</td>
+      <td>A+</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>So the first step in training a supervised machine learning model is separating <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
 <div class="cell docutils container">
@@ -623,10 +774,102 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ml_experience</th>
+      <th>class_attendance</th>
+      <th>lab1</th>
+      <th>lab2</th>
+      <th>lab3</th>
+      <th>lab4</th>
+      <th>quiz1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>92</td>
+      <td>93</td>
+      <td>84</td>
+      <td>91</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>94</td>
+      <td>90</td>
+      <td>80</td>
+      <td>83</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>78</td>
+      <td>85</td>
+      <td>83</td>
+      <td>80</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>91</td>
+      <td>94</td>
+      <td>92</td>
+      <td>91</td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>1</td>
+      <td>77</td>
+      <td>83</td>
+      <td>90</td>
+      <td>92</td>
+      <td>85</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        A+
+1    not A+
+2    not A+
+3        A+
+4        A+
+Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
@@ -645,10 +888,6 @@ document.write(`
 <li><p><strong>targets</strong> = outputs = outcomes = response variable = dependent variable = labels (if categorical).</p></li>
 <li><p><strong>training</strong> = learning = fitting</p></li>
 </ul>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Check out <a class="reference external" href="https://ubc-mds.github.io/resources_pages/terminology/">the MDS terminology document</a>.</p>
-</div>
 <p><br><br></p>
 </section>
 </section>
@@ -687,6 +926,83 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ml_experience</th>
+      <th>class_attendance</th>
+      <th>lab1</th>
+      <th>lab2</th>
+      <th>lab3</th>
+      <th>lab4</th>
+      <th>quiz1</th>
+      <th>quiz2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>92</td>
+      <td>93</td>
+      <td>84</td>
+      <td>91</td>
+      <td>92</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>94</td>
+      <td>90</td>
+      <td>80</td>
+      <td>83</td>
+      <td>91</td>
+      <td>not A+</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>78</td>
+      <td>85</td>
+      <td>83</td>
+      <td>80</td>
+      <td>80</td>
+      <td>not A+</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>91</td>
+      <td>94</td>
+      <td>92</td>
+      <td>91</td>
+      <td>89</td>
+      <td>A+</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -696,13 +1012,83 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classification_df</span>
-</pre></div>
-</div>
-</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ml_experience</th>
+      <th>class_attendance</th>
+      <th>lab1</th>
+      <th>lab2</th>
+      <th>lab3</th>
+      <th>lab4</th>
+      <th>quiz1</th>
+      <th>quiz2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>92</td>
+      <td>93</td>
+      <td>84</td>
+      <td>91</td>
+      <td>92</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>94</td>
+      <td>90</td>
+      <td>80</td>
+      <td>83</td>
+      <td>91</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>78</td>
+      <td>85</td>
+      <td>83</td>
+      <td>80</td>
+      <td>80</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>91</td>
+      <td>94</td>
+      <td>92</td>
+      <td>91</td>
+      <td>89</td>
+      <td>92</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -710,64 +1096,16 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</div>
-</section>
-</section>
-<section id="questions-for-you">
-<h2>❓❓ Questions for you<a class="headerlink" href="#questions-for-you" title="Link to this heading">#</a></h2>
-<section id="example-tabular-data-for-the-housing-price-prediction">
-<h3>Example: Tabular data for the housing price prediction<a class="headerlink" href="#example-tabular-data-for-the-housing-price-prediction" title="Link to this heading">#</a></h3>
-<p>Here is an example of tabular data for housing price prediction. You can download the data from <a class="reference external" href="https://www.kaggle.com/harlfoxem/housesalesprediction">here</a>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">housing_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;kc_house_data.csv&quot;</span><span class="p">)</span>
-<span class="n">housing_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">HTML</span><span class="p">(</span><span class="n">housing_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">housing_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">housing_df</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span>
-<span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-2-1-select-all-of-the-following-statements-which-are-examples-of-supervised-machine-learning">
-<h3>Exercise 2.1 Select all of the following statements which are examples of supervised machine learning<a class="headerlink" href="#exercise-2-1-select-all-of-the-following-statements-which-are-examples-of-supervised-machine-learning" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>How many examples and features are there in the housing price data above? You can use <code class="docutils literal notranslate"><span class="pre">df.shape</span></code> to get number of rows and columns in a dataframe.</p></li>
-<li><p>For each of the following examples what would be the relevant features and what would be the target?</p>
-<ol class="arabic simple">
-<li><p>Sentiment analysis</p></li>
-<li><p>Fraud detection</p></li>
-<li><p>Face recognition</p></li>
-</ol>
-</li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(21, 8)
 </pre></div>
 </div>
 </div>
 </div>
 <p><br><br></p>
 </section>
-<section id="iclicker-exercise-2-2-supervised-vs-unsupervised">
-<h3>iClicker Exercise 2.2 Supervised vs unsupervised<a class="headerlink" href="#iclicker-exercise-2-2-supervised-vs-unsupervised" title="Link to this heading">#</a></h3>
-<p><strong>iClicker cloud join link: https://join.iclicker.com/VYFJ</strong></p>
+<section id="iclicker-exercise-2-1-supervised-vs-unsupervised">
+<h3>iClicker Exercise 2.1 Supervised vs unsupervised<a class="headerlink" href="#iclicker-exercise-2-1-supervised-vs-unsupervised" title="Link to this heading">#</a></h3>
 <p><strong>Select all of the following statements which are examples of supervised machine learning</strong></p>
 <ul class="simple">
 <li><p>(A) Finding groups of similar properties in a real estate data set.</p></li>
@@ -778,9 +1116,8 @@ document.write(`
 </ul>
 <p><br><br></p>
 </section>
-<section id="iclicker-exercise-2-3-classification-vs-regression">
-<h3>iClicker Exercise 2.3 Classification vs regression<a class="headerlink" href="#iclicker-exercise-2-3-classification-vs-regression" title="Link to this heading">#</a></h3>
-<p><strong>iClicker cloud join link: https://join.iclicker.com/VYFJ</strong></p>
+<section id="iclicker-exercise-2-2-classification-vs-regression">
+<h3>iClicker Exercise 2.2 Classification vs regression<a class="headerlink" href="#iclicker-exercise-2-2-classification-vs-regression" title="Link to this heading">#</a></h3>
 <p><strong>Select all of the following statements which are examples of regression problems</strong></p>
 <ul class="simple">
 <li><p>(A) Predicting the price of a house based on features such as number of bedrooms and the year built.</p></li>
@@ -794,18 +1131,7 @@ document.write(`
 </section>
 <section id="baselines-video">
 <h2>Baselines [<a class="reference external" href="https://youtu.be/6eT5cLL-2Vc">video</a>]<a class="headerlink" href="#baselines-video" title="Link to this heading">#</a></h2>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Check out <a class="reference external" href="https://youtu.be/6eT5cLL-2Vc">the accompanying video</a> on this material.</p>
-</div>
-<section id="supervised-learning-reminder">
-<h3>Supervised learning (Reminder)<a class="headerlink" href="#supervised-learning-reminder" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Training data <span class="math notranslate nohighlight">\(\rightarrow\)</span> Machine learning algorithm <span class="math notranslate nohighlight">\(\rightarrow\)</span> ML model</p></li>
-<li><p>Unseen test data + ML model <span class="math notranslate nohighlight">\(\rightarrow\)</span> predictions
-<img alt="" src="../../_images/sup-learning.png" /></p></li>
-</ul>
-<!-- <img src="img/sup-learning.png" height="1000" width="1000">  --><p>Let’s build a very simple supervised machine learning model for quiz2 grade prediction problem.</p>
+<p>Let’s build a very simple supervised machine learning model for quiz2 grade prediction problem.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classification_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;quiz2-grade-toy-classification.csv&quot;</span><span class="p">)</span>
@@ -813,6 +1139,94 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ml_experience</th>
+      <th>class_attendance</th>
+      <th>lab1</th>
+      <th>lab2</th>
+      <th>lab3</th>
+      <th>lab4</th>
+      <th>quiz1</th>
+      <th>quiz2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>92</td>
+      <td>93</td>
+      <td>84</td>
+      <td>91</td>
+      <td>92</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>94</td>
+      <td>90</td>
+      <td>80</td>
+      <td>83</td>
+      <td>91</td>
+      <td>not A+</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>78</td>
+      <td>85</td>
+      <td>83</td>
+      <td>80</td>
+      <td>80</td>
+      <td>not A+</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>91</td>
+      <td>94</td>
+      <td>92</td>
+      <td>91</td>
+      <td>89</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>1</td>
+      <td>77</td>
+      <td>83</td>
+      <td>90</td>
+      <td>92</td>
+      <td>85</td>
+      <td>A+</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -820,9 +1234,16 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>quiz2
+not A+    11
+A+        10
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
 </div>
 <p>Seems like “not A+” occurs more frequently than “A+”. What if we predict “not A+” all the time?</p>
-</section>
 <section id="baselines">
 <h3>Baselines<a class="headerlink" href="#baselines" title="Link to this heading">#</a></h3>
 <dl class="simple myst">
@@ -859,6 +1280,94 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ml_experience</th>
+      <th>class_attendance</th>
+      <th>lab1</th>
+      <th>lab2</th>
+      <th>lab3</th>
+      <th>lab4</th>
+      <th>quiz1</th>
+      <th>quiz2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>92</td>
+      <td>93</td>
+      <td>84</td>
+      <td>91</td>
+      <td>92</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>94</td>
+      <td>90</td>
+      <td>80</td>
+      <td>83</td>
+      <td>91</td>
+      <td>not A+</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>78</td>
+      <td>85</td>
+      <td>83</td>
+      <td>80</td>
+      <td>80</td>
+      <td>not A+</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>91</td>
+      <td>94</td>
+      <td>92</td>
+      <td>91</td>
+      <td>89</td>
+      <td>A+</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>1</td>
+      <td>77</td>
+      <td>83</td>
+      <td>90</td>
+      <td>92</td>
+      <td>85</td>
+      <td>A+</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="create-x-and-y">
@@ -916,6 +1425,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;,
+       &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;,
+       &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;,
+       &#39;not A+&#39;, &#39;not A+&#39;, &#39;not A+&#39;], dtype=&#39;&lt;U6&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="score-your-model">
@@ -929,6 +1446,11 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The accuracy of the model on the training data: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dummy_clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy of the model on the training data: 0.524
 </pre></div>
 </div>
 </div>
@@ -951,11 +1473,16 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The error of the model on the training data: 0.476
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="fit-predict-and-score-summary">
 <h4><code class="docutils literal notranslate"><span class="pre">fit</span></code>, <code class="docutils literal notranslate"><span class="pre">predict</span></code> , and <code class="docutils literal notranslate"><span class="pre">score</span></code> summary<a class="headerlink" href="#fit-predict-and-score-summary" title="Link to this heading">#</a></h4>
-<p>Here is the general pattern when we build ML models using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p>
+<p>Even though this is a very simple model, it still follows the general pattern that we use when we build ML models using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create `X` and `y` from the given data</span>
@@ -971,19 +1498,20 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5238095238095238
+</pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You’ll be exploring dummy classifier in your lab!</p>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;not A+&#39;, &#39;not A+&#39;], dtype=&#39;&lt;U6&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
 <section id="dummyregressor">
 <h3><a class="reference external" href="https://scikit-learn.org/0.15/modules/generated/sklearn.dummy.DummyRegressor.html"><code class="docutils literal notranslate"><span class="pre">DummyRegressor</span></code></a><a class="headerlink" href="#dummyregressor" title="Link to this heading">#</a></h3>
 <p>You can also do the same thing for regression problems using <code class="docutils literal notranslate"><span class="pre">DummyRegressor</span></code>, which predicts mean, median, or constant value of the training set for all examples.</p>
-<ul class="simple">
-<li><p>Let’s build a regression baseline model using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.dummy</span><span class="w"> </span><span class="kn">import</span> <span class="n">DummyRegressor</span>
@@ -999,14 +1527,15 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([86.28571429, 86.28571429])
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">fit</span></code> and <code class="docutils literal notranslate"><span class="pre">predict</span></code> work similarly to classification. The <code class="docutils literal notranslate"><span class="pre">score</span></code> method in the context of regression returns somethings called <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score"><span class="math notranslate nohighlight">\(R^2\)</span> score</a>. (More on this in later videos.)</p>
-<ul>
-<li><p>The maximum <span class="math notranslate nohighlight">\(R^2\)</span> is 1 for perfect predictions.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">DummyRegressor</span></code> returns the mean of the <code class="docutils literal notranslate"><span class="pre">y</span></code> values, which means that <span class="math notranslate nohighlight">\(R^2\)</span> is:</p></li>
-</ul>
-</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fit</span></code> and <code class="docutils literal notranslate"><span class="pre">predict</span></code> are similar to classification. The <code class="docutils literal notranslate"><span class="pre">score</span></code> method is a bit different, and returns somethings called <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score"><span class="math notranslate nohighlight">\(R^2\)</span> score</a>. (More on this in later videos.)<br />
+The maximum <span class="math notranslate nohighlight">\(R^2\)</span> is 1 for perfect predictions. For a <code class="docutils literal notranslate"><span class="pre">DummyRegressor</span></code>, the score on training data is exactly 0 (we will see later why).</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1014,14 +1543,19 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
 </div>
 <p><br><br></p>
 </section>
 </section>
-<section id="id1">
-<h2>❓❓ Questions for you<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<section id="exercise-2-4">
-<h3>Exercise 2.4<a class="headerlink" href="#exercise-2-4" title="Link to this heading">#</a></h3>
+<section id="questions-for-you">
+<h2>❓❓ Questions for you<a class="headerlink" href="#questions-for-you" title="Link to this heading">#</a></h2>
+<section id="exercise-2-3">
+<h3>Exercise 2.3<a class="headerlink" href="#exercise-2-3" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Order the steps below to build ML models using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p>
 <ul class="simple">
@@ -1046,10 +1580,6 @@ document.write(`
 </section>
 <section id="decision-trees-video">
 <h2>Decision trees [<a class="reference external" href="https://youtu.be/Hcf19Ij35rA">video</a>]<a class="headerlink" href="#decision-trees-video" title="Link to this heading">#</a></h2>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Check out <a class="reference external" href="https://youtu.be/Hcf19Ij35rA">the accompanying video</a> on this material.</p>
-</div>
 <section id="writing-a-traditional-program-to-predict-quiz2-grade">
 <h3>Writing a traditional program to predict quiz2 grade<a class="headerlink" href="#writing-a-traditional-program-to-predict-quiz2-grade" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -1082,10 +1612,9 @@ document.write(`
 <section id="decision-tree-algorithm">
 <h3>Decision tree algorithm<a class="headerlink" href="#decision-tree-algorithm" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>A machine learning algorithm to derive such rules from data in a principled way.</p></li>
+<li><p>A machine learning algorithm to derive such rules from data in an organized fashion.</p></li>
 <li><p>Have you ever played <a class="reference external" href="https://en.wikipedia.org/wiki/Twenty_questions">20-questions game</a>? Decision trees are based on the same idea!</p></li>
-<li><p>Let’s <code class="docutils literal notranslate"><span class="pre">fit</span></code> a decision tree using <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> and <code class="docutils literal notranslate"><span class="pre">predict</span></code> with it.</p></li>
-<li><p>Recall that <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> uses the term <code class="docutils literal notranslate"><span class="pre">fit</span></code> for training or learning and uses <code class="docutils literal notranslate"><span class="pre">predict</span></code> for prediction.</p></li>
+<li><p>Let’s build a tree on this dataset and check what it looks like.</p></li>
 </ul>
 </section>
 <section id="building-decision-trees-with-sklearn">
@@ -1105,10 +1634,102 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ml_experience</th>
+      <th>class_attendance</th>
+      <th>lab1</th>
+      <th>lab2</th>
+      <th>lab3</th>
+      <th>lab4</th>
+      <th>quiz1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        A+
+1    not A+
+2    not A+
+3        A+
+4        A+
+Name: quiz2, dtype: object
 </pre></div>
 </div>
 </div>
@@ -1120,6 +1741,11 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dummy_clf</span> <span class="o">=</span> <span class="n">DummyClassifier</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;most_frequent&quot;</span><span class="p">)</span>
 <span class="n">dummy_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_binary</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">dummy_clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_binary</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5238095238095238
 </pre></div>
 </div>
 </div>
@@ -1137,8 +1763,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9047619047619048
+</pre></div>
+</div>
+</div>
 </div>
 <p>The decision tree classifier is giving much higher accuracy than the dummy classifier. That’s good news!</p>
+<p>How does it do that?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call the custom_plot_tree function to visualize the customized tree</span>
@@ -1152,6 +1784,9 @@ document.write(`
                  <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1cb4707476939a14f8320a1bc500d03925baf6d83f1afe9abd6b638759e552f6.png" src="../../_images/1cb4707476939a14f8320a1bc500d03925baf6d83f1afe9abd6b638759e552f6.png" />
 </div>
 </div>
 </section>
@@ -1174,6 +1809,7 @@ document.write(`
 </section>
 <section id="how-does-predict-work">
 <h3>How does <code class="docutils literal notranslate"><span class="pre">predict</span></code> work?<a class="headerlink" href="#how-does-predict-work" title="Link to this heading">#</a></h3>
+<p>Let’s manually find the assigned class for this new sample:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_example</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
@@ -1181,6 +1817,48 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ml_experience</th>
+      <th>class_attendance</th>
+      <th>lab1</th>
+      <th>lab2</th>
+      <th>lab3</th>
+      <th>lab4</th>
+      <th>quiz1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1193,11 +1871,23 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1cb4707476939a14f8320a1bc500d03925baf6d83f1afe9abd6b638759e552f6.png" src="../../_images/1cb4707476939a14f8320a1bc500d03925baf6d83f1afe9abd6b638759e552f6.png" />
+</div>
 </div>
 <p>What’s the prediction for the new example?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">new_example</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Giulia\anaconda3\envs\cpsc330\Lib\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but DecisionTreeClassifier was fitted with feature names
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;A+&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -1211,39 +1901,11 @@ document.write(`
 <section id="how-does-fit-work">
 <h3>How does <code class="docutils literal notranslate"><span class="pre">fit</span></code> work?<a class="headerlink" href="#how-does-fit-work" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Decision tree is inspired by <a class="reference external" href="https://en.wikipedia.org/wiki/Twenty_questions">20-questions game</a>.</p></li>
-<li><p>Each node either represents a question or an answer. The terminal nodes (called leaf nodes) represent answers.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_fruit_tree</span><span class="p">()</span> <span class="c1"># defined in code/plotting_functions.py</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id2">
-<h3>How does <code class="docutils literal notranslate"><span class="pre">fit</span></code> work?<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Which features are most useful for classification?</p></li>
-<li><p>Minimize <strong>impurity</strong> at each question</p></li>
+<li><p>To pick the best “question” to ask, the tree looks for the feature (and associated value) that will result in more ordered groups.</p></li>
+<li><p>In other terms, it tries to minimize <strong>impurity</strong> at each question</p></li>
 <li><p>Common criteria to minimize impurity: <a class="reference external" href="https://scikit-learn.org/stable/modules/tree.html#classification-criteria">gini index</a>, information gain, cross entropy</p></li>
+<li><p>Inherently, trees have a way to determine which features are most useful for classification</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-
-<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span> <span class="c1"># Create a decision tree</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_binary</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Fit a decision tree</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
-<span class="n">custom_plot_tree</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> 
-                 <span class="n">feature_names</span><span class="o">=</span><span class="n">X_binary</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> 
-                 <span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A+&#39;</span><span class="p">,</span> <span class="s1">&#39;not A+&#39;</span><span class="p">],</span>
-                 <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p>We won’t go through <strong>how</strong> it does this - that’s CPSC 340. But it’s worth noting that it support two types of inputs:
@@ -1253,11 +1915,108 @@ document.write(`
 </section>
 <section id="decision-trees-with-continuous-features">
 <h3>Decision trees with continuous features<a class="headerlink" href="#decision-trees-with-continuous-features" title="Link to this heading">#</a></h3>
+<p>Let’s visualize this idea using continuous features. We will pick only two, so that we can plot them in 2D.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ml_experience</th>
+      <th>class_attendance</th>
+      <th>lab1</th>
+      <th>lab2</th>
+      <th>lab3</th>
+      <th>lab4</th>
+      <th>quiz1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>92</td>
+      <td>93</td>
+      <td>84</td>
+      <td>91</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>94</td>
+      <td>90</td>
+      <td>80</td>
+      <td>83</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>78</td>
+      <td>85</td>
+      <td>83</td>
+      <td>80</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>91</td>
+      <td>94</td>
+      <td>92</td>
+      <td>91</td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>1</td>
+      <td>77</td>
+      <td>83</td>
+      <td>90</td>
+      <td>92</td>
+      <td>85</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mglearn</span><span class="o">.</span><span class="n">discrete_scatter</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;lab1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;lab3&quot;</span><span class="p">);</span>
+
+<span class="c1"># What feature and what value would you pick to produce the most ordered division?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2c4f3aeacec75974cfcd635ff14830500de9162b2110593747f209bac49a4239.png" src="../../_images/2c4f3aeacec75974cfcd635ff14830500de9162b2110593747f209bac49a4239.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1272,6 +2031,9 @@ document.write(`
                  <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3aad3e804e8d7876b8712ab6b18708c2bbaa7e514863302cb7cf2c110dc3649c.png" src="../../_images/3aad3e804e8d7876b8712ab6b18708c2bbaa7e514863302cb7cf2c110dc3649c.png" />
 </div>
 </div>
 </section>
@@ -1299,6 +2061,94 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ml_experience</th>
+      <th>class_attendance</th>
+      <th>lab1</th>
+      <th>lab2</th>
+      <th>lab3</th>
+      <th>lab4</th>
+      <th>quiz1</th>
+      <th>quiz2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>92</td>
+      <td>93</td>
+      <td>84</td>
+      <td>91</td>
+      <td>92</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>94</td>
+      <td>90</td>
+      <td>80</td>
+      <td>83</td>
+      <td>91</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>78</td>
+      <td>85</td>
+      <td>83</td>
+      <td>80</td>
+      <td>80</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>91</td>
+      <td>94</td>
+      <td>92</td>
+      <td>91</td>
+      <td>89</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>1</td>
+      <td>77</td>
+      <td>83</td>
+      <td>90</td>
+      <td>92</td>
+      <td>85</td>
+      <td>90</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1314,15 +2164,111 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R^2 score on the training data: 0.989
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ml_experience</th>
+      <th>class_attendance</th>
+      <th>lab1</th>
+      <th>lab2</th>
+      <th>lab3</th>
+      <th>lab4</th>
+      <th>quiz1</th>
+      <th>quiz2</th>
+      <th>predicted_quiz2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>92</td>
+      <td>93</td>
+      <td>84</td>
+      <td>91</td>
+      <td>92</td>
+      <td>90</td>
+      <td>90.333333</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>94</td>
+      <td>90</td>
+      <td>80</td>
+      <td>83</td>
+      <td>91</td>
+      <td>84</td>
+      <td>83.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>78</td>
+      <td>85</td>
+      <td>83</td>
+      <td>80</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>91</td>
+      <td>94</td>
+      <td>92</td>
+      <td>91</td>
+      <td>89</td>
+      <td>92</td>
+      <td>92.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>1</td>
+      <td>77</td>
+      <td>83</td>
+      <td>90</td>
+      <td>92</td>
+      <td>85</td>
+      <td>90</td>
+      <td>90.333333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p><br><br></p>
 </section>
 </section>
-<section id="id3">
-<h2>❓❓ Questions for you<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<section id="iclicker-exercise-2-5-baselines-and-decision-trees">
-<h3>iClicker Exercise 2.5: Baselines and decision trees<a class="headerlink" href="#iclicker-exercise-2-5-baselines-and-decision-trees" title="Link to this heading">#</a></h3>
-<p><strong>iClicker cloud join link: https://join.iclicker.com/VYFJ</strong></p>
+<section id="id1">
+<h2>❓❓ Questions for you<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="iclicker-exercise-2-4-baselines-and-decision-trees">
+<h3>iClicker Exercise 2.4: Baselines and decision trees<a class="headerlink" href="#iclicker-exercise-2-4-baselines-and-decision-trees" title="Link to this heading">#</a></h3>
 <p><strong>Select all of the following statements which are TRUE.</strong></p>
 <ul class="simple">
 <li><p>(A) Change in features (i.e., binarizing features above) would change <code class="docutils literal notranslate"><span class="pre">DummyClassifier</span></code> predictions.</p></li>
@@ -1339,10 +2285,6 @@ document.write(`
 <li><p>Parameters and hyperparameters</p></li>
 <li><p>Decision boundary</p></li>
 </ul>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Check out <a class="reference external" href="https://youtu.be/KEtsfXn4w2E">the accompanying video</a> on this material.</p>
-</div>
 <section id="parameters">
 <h3>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -1377,18 +2319,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/48e2970b0eb172141c30e9b796248a5de6833434af85589ad81067257bd0ca91.png" src="../../_images/48e2970b0eb172141c30e9b796248a5de6833434af85589ad81067257bd0ca91.png" />
 </div>
-<ul class="simple">
-<li><p>With the default setting, the nodes are expanded until all leaves are “pure”.</p></li>
-</ul>
-<ul class="simple">
-<li><p>The decision tree is creating very specific rules, based on just one example from the data.</p></li>
-<li><p>Is it possible to control the learning in any way?</p>
-<ul>
-<li><p>Yes! One way to do it is by controlling the <strong>depth</strong> of the tree, which is the length of the longest path from the tree root to a leaf.</p></li>
-</ul>
-</li>
-</ul>
+</div>
+<p>With the default setting, the nodes are expanded until all leaves are “pure” (they contain only samples from the same class).</p>
+<p>Sometimes, this means that the decision tree is creating very specific rules, based on just one example from the data.</p>
+<p><strong>Do you think this is a good idea?</strong></p>
+<p>Is it possible to control the learning by controlling the <strong>depth</strong> of the tree, which is the length of the longest path from the tree root to a leaf.</p>
 </section>
 <section id="decision-tree-with-max-depth-1">
 <h3>Decision tree with <code class="docutils literal notranslate"><span class="pre">max_depth=1</span></code><a class="headerlink" href="#decision-tree-with-max-depth-1" title="Link to this heading">#</a></h3>
@@ -1409,6 +2347,9 @@ document.write(`
                  <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/42c84a49b4b58c36fd7324af00d836be4cec1f50e6de160654133ec62c2305a1.png" src="../../_images/42c84a49b4b58c36fd7324af00d836be4cec1f50e6de160654133ec62c2305a1.png" />
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">max_depth</span></code> is a <strong>hyperparameter</strong> of <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code>.</p>
@@ -1432,6 +2373,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0e288081565c102bd28be944af59c560574f80189d5dd2f596d13802d8e637aa.png" src="../../_images/0e288081565c102bd28be944af59c560574f80189d5dd2f596d13802d8e637aa.png" />
+</div>
 </div>
 </section>
 <section id="parameters-and-hyperparameters-summary">
@@ -1442,10 +2386,6 @@ document.write(`
 <dt><strong>Hyperparameters</strong></dt><dd><p>Even before calling <code class="docutils literal notranslate"><span class="pre">fit</span></code> on a specific data set, we can set some “knobs” that control the learning. These are called <strong>hyperparameters</strong>. These are specified based on: expert knowledge, heuristics, or systematic/automated optimization (more on this in the coming lectures).</p>
 </dd>
 </dl>
-<div class="important admonition">
-<p class="admonition-title">Attention</p>
-<p>In <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> hyperparameters are set in the constructor.</p>
-</div>
 <p>Above we looked at the <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> hyperparameter. Some other commonly used hyperparameters of decision tree are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code></p></li>
@@ -1459,7 +2399,7 @@ document.write(`
 </section>
 <section id="decision-boundary">
 <h3>Decision boundary<a class="headerlink" href="#decision-boundary" title="Link to this heading">#</a></h3>
-<p>What do we do with learned models? So far we have been using them to predict the class of a new instance. Another way to think about them is to ask: what sort of test examples will the model classify as positive, and what sort will it classify as negative?</p>
+<p>A decision boundary is the line, plane, or high-dimensional surface that separates the classes in the decision space. Let’s see an example of that.</p>
 <section id="example-1-quiz-2-grade-prediction">
 <h4>Example 1: quiz 2 grade prediction<a class="headerlink" href="#example-1-quiz-2-grade-prediction" title="Link to this heading">#</a></h4>
 <p>For visualization purposes, let’s consider a subset of the data with only two features.</p>
@@ -1470,6 +2410,58 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lab4</th>
+      <th>quiz1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>91</td>
+      <td>92</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>83</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>80</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>91</td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>92</td>
+      <td>85</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <section id="decision-boundary-for-max-depth-1">
 <h5>Decision boundary for <code class="docutils literal notranslate"><span class="pre">max_depth=1</span></code><a class="headerlink" href="#decision-boundary-for-max-depth-1" title="Link to this heading">#</a></h5>
@@ -1484,9 +2476,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3f67866afb71a13f67303b0bfb1ca83d360e5d9508304f1f6c69a1da496717fd.png" src="../../_images/3f67866afb71a13f67303b0bfb1ca83d360e5d9508304f1f6c69a1da496717fd.png" />
 </div>
-<p>We assume geometric view of the data. Here, the red region corresponds to “not A+” class and blue region corresponds to “A+” class. And there is a line separating the red region and the blue region which is called the <strong>decision boundary</strong> of the model. Different models have different kinds of decision boundaries.
-In decision tree models, when we are working with only two features, the decision boundary is made up of horizontal and vertical lines. In the example above, the decision boundary is created by asking one question <code class="docutils literal notranslate"><span class="pre">lab4</span> <span class="pre">&lt;=</span> <span class="pre">84.5</span></code>.</p>
+</div>
+<p>The red region corresponds to “not A+” class and blue region corresponds to “A+” class. The line separating the red region and the blue region is called the <strong>decision boundary</strong> of the model. Different models have different kinds of decision boundaries.</p>
+<p>In decision tree models, when we are working with only two features, the decision boundary is made up of horizontal and vertical lines. In the example above, the decision boundary is created by asking one question <code class="docutils literal notranslate"><span class="pre">lab4</span> <span class="pre">&lt;=</span> <span class="pre">84.5</span></code>.</p>
 </section>
 <section id="decision-boundary-for-max-depth-2">
 <h5>Decision boundary for <code class="docutils literal notranslate"><span class="pre">max_depth=2</span></code><a class="headerlink" href="#decision-boundary-for-max-depth-2" title="Link to this heading">#</a></h5>
@@ -1499,6 +2494,9 @@ In decision tree models, when we are working with only two features, the decisio
 <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e5a33891a1f172ac907ec81ccff2d24efe5ee2f5268e930b842f74131e975a41.png" src="../../_images/e5a33891a1f172ac907ec81ccff2d24efe5ee2f5268e930b842f74131e975a41.png" />
 </div>
 </div>
 <p>The decision boundary, i.e., the model gets a bit more complicated.</p>
@@ -1515,110 +2513,24 @@ In decision tree models, when we are working with only two features, the decisio
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f9e04fdcfe9d133473ca1f6e713dd4adeaf42a16bef2652473c805a6cd1cdf31.png" src="../../_images/f9e04fdcfe9d133473ca1f6e713dd4adeaf42a16bef2652473c805a6cd1cdf31.png" />
+</div>
 </div>
 <p>The decision boundary, i.e., the model gets even more complicated with <code class="docutils literal notranslate"><span class="pre">max_depth=5</span></code>.</p>
 <p><br><br></p>
-</section>
-</section>
-<section id="example-2-predicting-country-using-the-longitude-and-latitude">
-<h4>Example 2: Predicting country using the longitude and latitude<a class="headerlink" href="#example-2-predicting-country-using-the-longitude-and-latitude" title="Link to this heading">#</a></h4>
-<p>Imagine that you are given longitude and latitude of some border cities of USA and Canada along with which country they belong to. Using this training data, you are supposed to come up with a classification model to predict whether a given longitude and latitude combination is in the USA or Canada.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### US Canada cities data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="s2">&quot;canada_usa_cities.csv&quot;</span><span class="p">)</span>
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;latitude&quot;</span><span class="p">]]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mglearn</span><span class="o">.</span><span class="n">discrete_scatter</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;longitude&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;latitude&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="real-boundary-between-canada-and-usa">
-<h5>Real boundary between Canada and USA<a class="headerlink" href="#real-boundary-between-canada-and-usa" title="Link to this heading">#</a></h5>
-<p>In real life we know what’s the boundary between USA and Canada.</p>
-<p><img alt="" src="../../_images/canada-us-border.jpg" /></p>
-<!-- <img src="img/canada-us-border.jpg" height="500" width="500">  -->
-<p><a class="reference external" href="https://sovereignlimits.com/blog/u-s-canada-border-history-disputes">Source</a></p>
-<p>Here we want to pretend that we do not know this boundary and we want to infer this boundary based on the limited training examples given to us.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plot_tree_decision_boundary_and_tree</span><span class="p">(</span>
-    <span class="n">model</span><span class="p">,</span>
-    <span class="n">X</span><span class="p">,</span>
-    <span class="n">y</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
-    <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
-    <span class="n">eps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">x_label</span><span class="o">=</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span>
-    <span class="n">y_label</span><span class="o">=</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plot_tree_decision_boundary_and_tree</span><span class="p">(</span>
-    <span class="n">model</span><span class="p">,</span>
-    <span class="n">X</span><span class="p">,</span>
-    <span class="n">y</span><span class="p">,</span>
-    <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
-    <span class="n">width</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
-    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
-    <span class="n">eps</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">x_label</span><span class="o">=</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span>
-    <span class="n">y_label</span><span class="o">=</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>So we can control the depth of the tree… why does it matter? Is a bigger tree always better?</p>
-<p>To be continued…</p>
 </section>
 </section>
 </section>
 <section id="practice-exercises">
 <h3>Practice exercises<a class="headerlink" href="#practice-exercises" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>If you want more practice, check out module 2 in <a class="reference external" href="https://ml-learn.mds.ubc.ca/en/module2">this online course</a>. All the sections <strong>without</strong> video or notes symbol are exercises.</p></li>
+<li><p>If you want more practice, check out module 2 in <a class="reference external" href="https://ml-learn.mds.ubc.ca/en/module2">this online course</a> designed by Hayley Boyce, Mike Gelbart, and Varada Kolhatkar. All the sections <strong>without</strong> video or notes symbol are exercises.</p></li>
 </ul>
 <div class="important admonition">
 <p class="admonition-title">Attention</p>
 <p>If all of you are working on the exercises, especially coding exercises, at the same time, you might have to wait for the real-time feedback for a long time or you might even get an error. There is no solution for this other than waiting for a while and trying it again.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Some background on <a class="reference external" href="https://ml-learn.mds.ubc.ca/en/">the online course</a> above: This course is designed by Hayley Boyce, Mike Gelbart, and myself. It’ll be a great resource at the beginning of this class, as it give you a chance to practice what we learn and the framework will provide you real-time feedback.</p>
-</div>
-<p><br><br><br><br></p>
 </section>
 </section>
 <section id="final-comments-summary-and-reflection">
@@ -1668,16 +2580,16 @@ terminology includes:</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-cpsc330-24-py"
+            mode: "conda-env-cpsc330-py"
         },
         kernelOptions: {
-            name: "conda-env-cpsc330-24-py",
+            name: "conda-env-cpsc330-py",
             path: "./lectures/101-103-Giulia-lectures"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-cpsc330-24-py'</script>
+    <script>kernelName = 'conda-env-cpsc330-py'</script>
 
                 </article>
               
@@ -1705,14 +2617,10 @@ terminology includes:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports-announcements-los">Imports, Announcements, LOs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology-video">Terminology [video]</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#big-picture-and-datasets">Big picture and datasets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-datasets">Toy datasets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-supervised-machine-learning">Recap: Supervised machine learning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tabular-data">Tabular data</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tabular-data-for-grade-prediction">Example: Tabular data for grade prediction</a></li>
@@ -1721,17 +2629,11 @@ terminology includes:</p>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning-vs-unsupervised-learning">Supervised learning vs. Unsupervised learning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-vs-regression">Classification vs. Regression</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tabular-data-for-the-housing-price-prediction">Example: Tabular data for the housing price prediction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-1-select-all-of-the-following-statements-which-are-examples-of-supervised-machine-learning">Exercise 2.1 Select all of the following statements which are examples of supervised machine learning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-2-supervised-vs-unsupervised">iClicker Exercise 2.2 Supervised vs unsupervised</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-3-classification-vs-regression">iClicker Exercise 2.3 Classification vs regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-1-supervised-vs-unsupervised">iClicker Exercise 2.1 Supervised vs unsupervised</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-2-classification-vs-regression">iClicker Exercise 2.2 Classification vs regression</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baselines-video">Baselines [video]</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning-reminder">Supervised learning (Reminder)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baselines">Baselines</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dummyclassifier"><code class="docutils literal notranslate"><span class="pre">DummyClassifier</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-train-a-classifier-using-sklearn">Steps to train a classifier using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code></a><ul class="nav section-nav flex-column">
@@ -1747,8 +2649,8 @@ terminology includes:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dummyregressor"><code class="docutils literal notranslate"><span class="pre">DummyRegressor</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-4">Exercise 2.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-3">Exercise 2.3</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-5-min">Break (5 min)</a></li>
@@ -1763,13 +2665,12 @@ terminology includes:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-terminology-related-to-trees">Some terminology related to trees</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-predict-work">How does <code class="docutils literal notranslate"><span class="pre">predict</span></code> work?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-fit-work">How does <code class="docutils literal notranslate"><span class="pre">fit</span></code> work?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">How does <code class="docutils literal notranslate"><span class="pre">fit</span></code> work?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees-with-continuous-features">Decision trees with continuous features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-for-regression-problems">Decision tree for regression problems</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-5-baselines-and-decision-trees">iClicker Exercise 2.5: Baselines and decision trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-4-baselines-and-decision-trees">iClicker Exercise 2.4: Baselines and decision trees</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-terminology-video">More terminology [video]</a><ul class="nav section-nav flex-column">
@@ -1782,10 +2683,6 @@ terminology includes:</p>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-boundary-for-max-depth-1">Decision boundary for <code class="docutils literal notranslate"><span class="pre">max_depth=1</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-boundary-for-max-depth-2">Decision boundary for <code class="docutils literal notranslate"><span class="pre">max_depth=2</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-boundary-for-max-depth-5">Decision boundary for <code class="docutils literal notranslate"><span class="pre">max_depth=5</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-predicting-country-using-the-longitude-and-latitude">Example 2: Predicting country using the longitude and latitude</a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#real-boundary-between-canada-and-usa">Real boundary between Canada and USA</a></li>
 </ul>
 </li>
 </ul>

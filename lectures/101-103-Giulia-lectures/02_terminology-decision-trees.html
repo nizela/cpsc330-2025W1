@@ -382,6 +382,9 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-terminology-for-examples-features-targets-and-training">Alternative terminology for examples, features, targets, and training</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-features-and-targets">Exercise - Features and targets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning-vs-unsupervised-learning">Supervised learning vs. Unsupervised learning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-vs-regression">Classification vs. Regression</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-1-supervised-vs-unsupervised">iClicker Exercise 2.1 Supervised vs unsupervised</a></li>
@@ -404,10 +407,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dummyregressor"><code class="docutils literal notranslate"><span class="pre">DummyRegressor</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-3">Exercise 2.3</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-5-min">Break (5 min)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees-video">Decision trees [video]</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-traditional-program-to-predict-quiz2-grade">Writing a traditional program to predict quiz2 grade</a></li>
@@ -421,10 +420,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-predict-work">How does <code class="docutils literal notranslate"><span class="pre">predict</span></code> work?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-fit-work">How does <code class="docutils literal notranslate"><span class="pre">fit</span></code> work?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees-with-continuous-features">Decision trees with continuous features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-3-find-the-root-node">iClicker Exercise 2.3 - Find the root node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-for-regression-problems">Decision tree for regression problems</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-4-baselines-and-decision-trees">iClicker Exercise 2.4: Baselines and decision trees</a></li>
 </ul>
 </li>
@@ -460,7 +460,7 @@ document.write(`
   <p><img alt="" src="../../_images/330-banner.png" /></p>
 <section class="tex2jax_ignore mathjax_ignore" id="lecture-2-terminology-baselines-decision-trees">
 <h1>Lecture 2: Terminology, Baselines, Decision Trees<a class="headerlink" href="#lecture-2-terminology-baselines-decision-trees" title="Link to this heading">#</a></h1>
-<p>UBC 2024-25</p>
+<p>UBC 2025-26</p>
 <section id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -491,12 +491,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Giulia\OneDrive - UBC\Github\cpsc330-2025W1\lectures\code\utils.py:46: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-  new_text = re.sub(&#39;samples = \d+\n&#39;, &#39;&#39;, text.get_text()) # Hide samples
-</pre></div>
-</div>
-</div>
 </div>
 <p><br><br></p>
 </section>
@@ -517,7 +511,7 @@ document.write(`
 <li><p>explain the concept of decision boundaries;</p></li>
 <li><p>explain the relation between model complexity and decision boundaries.</p></li>
 </ul>
-<p>This is a condensed version of the notes available <a class="reference external" href="https://github.com/UBC-CS/cpsc330-2024W2/blob/main/lectures/notes/02_terminology-decision-trees.ipynb">here</a>.</p>
+<p>This is a condensed version of the notes available <a class="reference external" href="https://github.com/UBC-CS/cpsc330-2025W1/blob/main/lectures/notes/02_terminology-decision-trees.ipynb">here</a>.</p>
 <p><br><br><br><br></p>
 </section>
 <section id="terminology-video">
@@ -868,14 +862,23 @@ Name: quiz2, dtype: object
 <li><p><strong>targets</strong> = outputs = outcomes = response variable = dependent variable = labels (if categorical).</p></li>
 <li><p><strong>training</strong> = learning = fitting</p></li>
 </ul>
+</section>
+</section>
+</section>
+<section id="exercise-features-and-targets">
+<h2>Exercise - Features and targets<a class="headerlink" href="#exercise-features-and-targets" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Pair up with a neighbor</p></li>
+<li><p>Agree on a target that you would like to predict; this could be so many things, so be creative (but not too obscure)!</p></li>
+<li><p>Think of at least 5 features that would help predict the target.</p></li>
+<li><p>Report back when time is up (2 minutes).</p></li>
+</ul>
 <p><br><br></p>
-</section>
-</section>
 <section id="supervised-learning-vs-unsupervised-learning">
 <h3>Supervised learning vs. Unsupervised learning<a class="headerlink" href="#supervised-learning-vs-unsupervised-learning" title="Link to this heading">#</a></h3>
 <p>In <strong>supervised learning</strong>, training data comprises a set of features (<span class="math notranslate nohighlight">\(X\)</span>) and their corresponding targets (<span class="math notranslate nohighlight">\(y\)</span>). We wish to find a <strong>model function <span class="math notranslate nohighlight">\(f\)</span></strong> that relates <span class="math notranslate nohighlight">\(X\)</span> to <span class="math notranslate nohighlight">\(y\)</span>. Then use that model function <strong>to predict the targets</strong> of new examples.</p>
 <p><img alt="" src="../../_images/sup-learning.png" /></p>
-<p>In <strong>unsupervised learning</strong> training data consists of observations (<span class="math notranslate nohighlight">\(X\)</span>) <strong>without any corresponding targets</strong>. Unsupervised learning could be used to <strong>group similar things together</strong> in <span class="math notranslate nohighlight">\(X\)</span> or to provide <strong>concise summary</strong> of the data. We’ll learn more about this topic in later videos.</p>
+<p>In <strong>unsupervised learning</strong> training data consists of observations (<span class="math notranslate nohighlight">\(X\)</span>) <strong>without any corresponding targets</strong>. Unsupervised learning could be used to <strong>group similar things together</strong> in <span class="math notranslate nohighlight">\(X\)</span> or to provide <strong>concise summary</strong> of the data. We’ll learn more about this topic later in the course.</p>
 <p><img alt="" src="../../_images/unsup-learning.png" /></p>
 <p>Supervised machine learning is about function approximation, i.e., finding the mapping function between <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> whereas unsupervised machine learning is about concisely describing the data.</p>
 <p><br><br></p>
@@ -1094,7 +1097,6 @@ Name: quiz2, dtype: object
 <li><p>(D) Detecting credit card fraud based on examples of fraudulent and non-fraudulent transactions.</p></li>
 <li><p>(E) Given some measure of employee performance, identify the key factors which are likely to influence their performance.</p></li>
 </ul>
-<p><br><br></p>
 </section>
 <section id="iclicker-exercise-2-2-classification-vs-regression">
 <h3>iClicker Exercise 2.2 Classification vs regression<a class="headerlink" href="#iclicker-exercise-2-2-classification-vs-regression" title="Link to this heading">#</a></h3>
@@ -1475,6 +1477,8 @@ Name: count, dtype: int64
 
 <span class="n">new_examples</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">92</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">92</span><span class="p">]]</span>
 <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">new_examples</span><span class="p">)</span> <span class="c1"># Predict on some new data using the trained model</span>
+
+<span class="c1"># ...wait, predict after score?</span>
 </pre></div>
 </div>
 </div>
@@ -1530,24 +1534,6 @@ The maximum <span class="math notranslate nohighlight">\(R^2\)</span> is 1 for p
 </div>
 </div>
 <p><br><br></p>
-</section>
-</section>
-<section id="questions-for-you">
-<h2>❓❓ Questions for you<a class="headerlink" href="#questions-for-you" title="Link to this heading">#</a></h2>
-<section id="exercise-2-3">
-<h3>Exercise 2.3<a class="headerlink" href="#exercise-2-3" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Order the steps below to build ML models using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">score</span></code> to evaluate the performance of a given model</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">predict</span></code> on new examples</p></li>
-<li><p>Creating a model instance</p></li>
-<li><p>Creating <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fit</span></code></p></li>
-</ul>
-</li>
-</ol>
-<p><br><br><br><br></p>
 </section>
 </section>
 <section id="break-5-min">
@@ -1766,7 +1752,7 @@ Name: quiz2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1cb4707476939a14f8320a1bc500d03925baf6d83f1afe9abd6b638759e552f6.png" src="../../_images/1cb4707476939a14f8320a1bc500d03925baf6d83f1afe9abd6b638759e552f6.png" />
+<img alt="../../_images/57f6027ac7e8a063124d398c9dd796718bbfc4fa8ac1e381fc767fd2dd10502b.png" src="../../_images/57f6027ac7e8a063124d398c9dd796718bbfc4fa8ac1e381fc767fd2dd10502b.png" />
 </div>
 </div>
 </section>
@@ -1852,7 +1838,7 @@ Name: quiz2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1cb4707476939a14f8320a1bc500d03925baf6d83f1afe9abd6b638759e552f6.png" src="../../_images/1cb4707476939a14f8320a1bc500d03925baf6d83f1afe9abd6b638759e552f6.png" />
+<img alt="../../_images/57f6027ac7e8a063124d398c9dd796718bbfc4fa8ac1e381fc767fd2dd10502b.png" src="../../_images/57f6027ac7e8a063124d398c9dd796718bbfc4fa8ac1e381fc767fd2dd10502b.png" />
 </div>
 </div>
 <p>What’s the prediction for the new example?</p>
@@ -1999,6 +1985,10 @@ Name: quiz2, dtype: object
 <img alt="../../_images/2c4f3aeacec75974cfcd635ff14830500de9162b2110593747f209bac49a4239.png" src="../../_images/2c4f3aeacec75974cfcd635ff14830500de9162b2110593747f209bac49a4239.png" />
 </div>
 </div>
+</section>
+<section id="iclicker-exercise-2-3-find-the-root-node">
+<h3>iClicker Exercise 2.3 - Find the root node<a class="headerlink" href="#iclicker-exercise-2-3-find-the-root-node" title="Link to this heading">#</a></h3>
+<p>How would you start separating the samples to get the best division? Click on the plot axes where you would place the threshold.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
@@ -2013,7 +2003,7 @@ Name: quiz2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3aad3e804e8d7876b8712ab6b18708c2bbaa7e514863302cb7cf2c110dc3649c.png" src="../../_images/3aad3e804e8d7876b8712ab6b18708c2bbaa7e514863302cb7cf2c110dc3649c.png" />
+<img alt="../../_images/472a261b21006e20236eb55f3da5a679172989257e7072d3cb1b34dfc667273f.png" src="../../_images/472a261b21006e20236eb55f3da5a679172989257e7072d3cb1b34dfc667273f.png" />
 </div>
 </div>
 </section>
@@ -2245,8 +2235,8 @@ Name: quiz2, dtype: object
 <p><br><br></p>
 </section>
 </section>
-<section id="id1">
-<h2>❓❓ Questions for you<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="questions-for-you">
+<h2>❓❓ Questions for you<a class="headerlink" href="#questions-for-you" title="Link to this heading">#</a></h2>
 <section id="iclicker-exercise-2-4-baselines-and-decision-trees">
 <h3>iClicker Exercise 2.4: Baselines and decision trees<a class="headerlink" href="#iclicker-exercise-2-4-baselines-and-decision-trees" title="Link to this heading">#</a></h3>
 <p><strong>Select all of the following statements which are TRUE.</strong></p>
@@ -2300,7 +2290,7 @@ Name: quiz2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/48e2970b0eb172141c30e9b796248a5de6833434af85589ad81067257bd0ca91.png" src="../../_images/48e2970b0eb172141c30e9b796248a5de6833434af85589ad81067257bd0ca91.png" />
+<img alt="../../_images/2012d8eeec50d4e9050b623eaf1f3a3066fed7735d48aa55310002e3f7ff353c.png" src="../../_images/2012d8eeec50d4e9050b623eaf1f3a3066fed7735d48aa55310002e3f7ff353c.png" />
 </div>
 </div>
 <p>With the default setting, the nodes are expanded until all leaves are “pure” (they contain only samples from the same class).</p>
@@ -2354,7 +2344,7 @@ Name: quiz2, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0e288081565c102bd28be944af59c560574f80189d5dd2f596d13802d8e637aa.png" src="../../_images/0e288081565c102bd28be944af59c560574f80189d5dd2f596d13802d8e637aa.png" />
+<img alt="../../_images/43365b0362dd51fdee4717e56b68dc06902e5b1c842906cb500cf28e8a1a9539.png" src="../../_images/43365b0362dd51fdee4717e56b68dc06902e5b1c842906cb500cf28e8a1a9539.png" />
 </div>
 </div>
 </section>
@@ -2560,16 +2550,16 @@ terminology includes:</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-cpsc330-py"
+            mode: "cpsc330"
         },
         kernelOptions: {
-            name: "conda-env-cpsc330-py",
+            name: "cpsc330",
             path: "./lectures/101-103-Giulia-lectures"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-cpsc330-py'</script>
+    <script>kernelName = 'cpsc330'</script>
 
                 </article>
               
@@ -2607,6 +2597,9 @@ terminology includes:</p>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-terminology-for-examples-features-targets-and-training">Alternative terminology for examples, features, targets, and training</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-features-and-targets">Exercise - Features and targets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning-vs-unsupervised-learning">Supervised learning vs. Unsupervised learning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-vs-regression">Classification vs. Regression</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-1-supervised-vs-unsupervised">iClicker Exercise 2.1 Supervised vs unsupervised</a></li>
@@ -2629,10 +2622,6 @@ terminology includes:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dummyregressor"><code class="docutils literal notranslate"><span class="pre">DummyRegressor</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-3">Exercise 2.3</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-5-min">Break (5 min)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees-video">Decision trees [video]</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-traditional-program-to-predict-quiz2-grade">Writing a traditional program to predict quiz2 grade</a></li>
@@ -2646,10 +2635,11 @@ terminology includes:</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-predict-work">How does <code class="docutils literal notranslate"><span class="pre">predict</span></code> work?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-fit-work">How does <code class="docutils literal notranslate"><span class="pre">fit</span></code> work?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees-with-continuous-features">Decision trees with continuous features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-3-find-the-root-node">iClicker Exercise 2.3 - Find the root node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-for-regression-problems">Decision tree for regression problems</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-2-4-baselines-and-decision-trees">iClicker Exercise 2.4: Baselines and decision trees</a></li>
 </ul>
 </li>

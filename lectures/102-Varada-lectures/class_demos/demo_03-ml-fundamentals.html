@@ -375,6 +375,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis">Exploratory Data Analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-model">Baseline model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-model">Decision tree model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intuition-of-regression-trees">Intuition of regression trees</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a></li>
 </ul>
 </li>
@@ -579,6 +580,14 @@ document.write(`
 </div>
 </div>
 </div>
+<section id="intuition-of-regression-trees">
+<h3>Intuition of regression trees<a class="headerlink" href="#intuition-of-regression-trees" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>In classification trees, a “good split” is one that makes each group more pure in terms of labels (e.g., mostly happy 🙂 vs. mostly unhappy 🙁).</p></li>
+<li><p>In regression trees, a good split is one that creates groups where the target values have low variance around their mean.</p></li>
+</ul>
+<p>See <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html">the documentation</a> for more details.</p>
+</section>
 <section id="questions-for-you">
 <h3>❓❓ Questions for you<a class="headerlink" href="#questions-for-you" title="Link to this heading">#</a></h3>
 <p>We are getting a perfect accuracy. Should we be happy with this model and deploy it? Why or why not?</p>
@@ -726,7 +735,7 @@ document.write(`
 
 <span class="k">for</span> <span class="n">depth</span> <span class="ow">in</span> <span class="n">depths</span><span class="p">:</span>  
     <span class="c1"># Create and fit a decision tree model for the given depth  </span>
-    <span class="n">dt</span> <span class="o">=</span> 
+    <span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
 
     <span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_tr</span><span class="p">,</span> <span class="n">y_tr</span><span class="p">)</span>
     
@@ -765,14 +774,15 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">depths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="n">cv_train_scores</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">cv_valid_scores</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">cv_train_scores</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># store training scores for different depths in this list</span>
+<span class="n">cv_valid_scores</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># store validation scores for different depths in this list</span>
+
 <span class="k">for</span> <span class="n">depth</span> <span class="ow">in</span> <span class="n">depths</span><span class="p">:</span> 
     <span class="c1"># Create and fit a decision tree model for the given depth   </span>
-    <span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">max_depth</span> <span class="o">=</span> <span class="n">depth</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">max_depth</span> <span class="o">=</span> <span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
 
     <span class="c1"># Carry out cross-validation</span>
-    <span class="n">results</span> <span class="o">=</span> 
+    <span class="n">scores</span> <span class="o">=</span> 
     <span class="n">cv_train_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;train_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
     <span class="n">cv_valid_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;test_score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>    
 </pre></div>
@@ -971,6 +981,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis">Exploratory Data Analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-model">Baseline model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-model">Decision tree model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intuition-of-regression-trees">Intuition of regression trees</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-you">❓❓ Questions for you</a></li>
 </ul>
 </li>

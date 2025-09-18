@@ -425,12 +425,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-5-3">(iClicker) Exercise 5.3</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-did-we-learn-today">What did we learn today?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-different-transformations-on-different-columns">Problem: Different transformations on different columns</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-did-we-learn-today">What did we learn today?</a></li>
 </ul>
             </nav>
         </div>
@@ -445,7 +443,7 @@ document.write(`
   <p><img alt="" src="../../_images/330-banner.png" /></p>
 <section class="tex2jax_ignore mathjax_ignore" id="lecture-5-preprocessing-and-sklearn-pipelines">
 <h1>Lecture 5: Preprocessing and <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> pipelines<a class="headerlink" href="#lecture-5-preprocessing-and-sklearn-pipelines" title="Link to this heading">#</a></h1>
-<p>UBC 2024-25</p>
+<p>UBC 2025-26</p>
 <section id="imports-los">
 <h2>Imports, LOs<a class="headerlink" href="#imports-los" title="Link to this heading">#</a></h2>
 <section id="imports">
@@ -514,7 +512,6 @@ document.write(`
 <h2>❓❓ Questions for you<a class="headerlink" href="#questions-for-you" title="Link to this heading">#</a></h2>
 <section id="iclicker-exercise-5-1">
 <h3>(iClicker) Exercise 5.1<a class="headerlink" href="#iclicker-exercise-5-1" title="Link to this heading">#</a></h3>
-<p><strong>iClicker cloud join link: https://join.iclicker.com/RITY</strong></p>
 <p>Take a guess: In your machine learning project, how much time will you typically spend on data preparation and transformation?</p>
 <ul class="simple">
 <li><p>(A) ~80% of the project time</p></li>
@@ -611,36 +608,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.000502</td>
-      <td>0.000342</td>
+      <td>0.003070</td>
+      <td>0.002014</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.000306</td>
-      <td>0.000241</td>
+      <td>0.001990</td>
+      <td>0.002202</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000285</td>
-      <td>0.000228</td>
+      <td>0.002157</td>
+      <td>0.001019</td>
       <td>0.507740</td>
       <td>0.507752</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000278</td>
-      <td>0.000222</td>
+      <td>0.002505</td>
+      <td>0.002012</td>
       <td>0.506211</td>
       <td>0.508133</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000279</td>
-      <td>0.000218</td>
+      <td>0.002007</td>
+      <td>0.002301</td>
       <td>0.509317</td>
       <td>0.507359</td>
     </tr>
@@ -688,36 +685,36 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.002814</td>
-      <td>0.006570</td>
+      <td>0.011633</td>
+      <td>0.041501</td>
       <td>0.563467</td>
       <td>0.717829</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.001079</td>
-      <td>0.005622</td>
+      <td>0.008854</td>
+      <td>0.041658</td>
       <td>0.535604</td>
       <td>0.721705</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.000952</td>
-      <td>0.005377</td>
+      <td>0.008017</td>
+      <td>0.042797</td>
       <td>0.529412</td>
       <td>0.708527</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.000894</td>
-      <td>0.005373</td>
+      <td>0.005243</td>
+      <td>0.042230</td>
       <td>0.537267</td>
       <td>0.721921</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.000881</td>
-      <td>0.005398</td>
+      <td>0.008151</td>
+      <td>0.040142</td>
       <td>0.562112</td>
       <td>0.711077</td>
     </tr>
@@ -1957,29 +1954,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/69cbd3ec9e39be219d1121f40381186b04178d143839dad4de52a10b9a7e509c.png" src="../../_images/69cbd3ec9e39be219d1121f40381186b04178d143839dad4de52a10b9a7e509c.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## (optional)</span>
-<span class="n">train_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-    <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">,</span>
-    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span>
-    <span class="n">s</span><span class="o">=</span><span class="n">train_df</span><span class="p">[</span><span class="s2">&quot;population_per_household&quot;</span><span class="p">],</span>
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
-    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s2">&quot;jet&quot;</span><span class="p">),</span>
-    <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/06ecaa42ec9aa542605a95e2b48395ad9a59eff580d2011bba754109b3e8d434.png" src="../../_images/06ecaa42ec9aa542605a95e2b48395ad9a59eff580d2011bba754109b3e8d434.png" />
+<img alt="../../_images/5242bd62b8f6a9dc2b4bdfddf14b06b96a5c8c150b66904599396c8ba8492d98.png" src="../../_images/5242bd62b8f6a9dc2b4bdfddf14b06b96a5c8c150b66904599396c8ba8492d98.png" />
 </div>
 </div>
 </section>
@@ -2041,7 +2016,7 @@ memory usage: 1.6+ MB
     <span class="n">out_col</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mean_scores</span><span class="p">)):</span>
-        <span class="n">out_col</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="sa">f</span><span class="s2">&quot;%0.3f (+/- %0.3f)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mean_scores</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">std_scores</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+        <span class="n">out_col</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="sa">f</span><span class="s2">&quot;%0.3f (+/- %0.3f)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mean_scores</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">std_scores</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
 
     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">out_col</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">mean_scores</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
 </pre></div>
@@ -2051,15 +2026,10 @@ memory usage: 1.6+ MB
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dummy</span> <span class="o">=</span> <span class="n">DummyRegressor</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;median&quot;</span><span class="p">)</span>
+
 <span class="n">results_dict</span><span class="p">[</span><span class="s2">&quot;dummy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_std_cross_val_scores</span><span class="p">(</span>
     <span class="n">dummy</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/7l/2m7m0lw97rvf654x1cwtdfmr0000gr/T/ipykernel_70329/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
 </pre></div>
 </div>
 </div>
@@ -2095,11 +2065,11 @@ memory usage: 1.6+ MB
   <tbody>
     <tr>
       <th>fit_time</th>
-      <td>0.001 (+/- 0.000)</td>
+      <td>0.002 (+/- 0.000)</td>
     </tr>
     <tr>
       <th>score_time</th>
-      <td>0.000 (+/- 0.000)</td>
+      <td>0.000 (+/- 0.001)</td>
     </tr>
     <tr>
       <th>test_score</th>
@@ -2282,6 +2252,126 @@ memory usage: 1.6+ MB
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">()</span>
 <span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">46</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="nn">File ~\anaconda3\envs\cpsc330\Lib\site-packages\sklearn\base.py:1389,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1382</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1384</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1385</span>     <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1386</span>         <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
+<span class="g g-Whitespace">   </span><span class="mi">1387</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1388</span> <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1389</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\anaconda3\envs\cpsc330\Lib\site-packages\sklearn\neighbors\_regression.py:222,</span> in <span class="ni">KNeighborsRegressor.fit</span><span class="nt">(self, X, y)</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span> <span class="nd">@_fit_context</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span>     <span class="c1"># KNeighborsRegressor.metric is not validated yet</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>     <span class="n">prefer_skip_nested_validation</span><span class="o">=</span><span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Fit the k-nearest neighbors regressor from the training dataset.</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span><span class="sd">     Parameters</span>
+<span class="sd">   (...)    220         The fitted k-nearest neighbors regressor.</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">222</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nn">File ~\anaconda3\envs\cpsc330\Lib\site-packages\sklearn\neighbors\_base.py:478,</span> in <span class="ni">NeighborsBase._fit</span><span class="nt">(self, X, y)</span>
+<span class="g g-Whitespace">    </span><span class="mi">476</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__sklearn_tags__</span><span class="p">()</span><span class="o">.</span><span class="n">target_tags</span><span class="o">.</span><span class="n">required</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">477</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="p">(</span><span class="n">KDTree</span><span class="p">,</span> <span class="n">BallTree</span><span class="p">,</span> <span class="n">NeighborsBase</span><span class="p">)):</span>
+<span class="ne">--&gt; </span><span class="mi">478</span>         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">validate_data</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">479</span>             <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">480</span>             <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">481</span>             <span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">482</span>             <span class="n">accept_sparse</span><span class="o">=</span><span class="s2">&quot;csr&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">483</span>             <span class="n">multi_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">484</span>             <span class="n">order</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">485</span>             <span class="n">ensure_all_finite</span><span class="o">=</span><span class="n">ensure_all_finite</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">486</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">488</span>     <span class="k">if</span> <span class="n">is_classifier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">489</span>         <span class="c1"># Classification targets require a specific format</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span>         <span class="k">if</span> <span class="n">y</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">y</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+<span class="nn">File ~\anaconda3\envs\cpsc330\Lib\site-packages\sklearn\utils\validation.py:2961,</span> in <span class="ni">validate_data</span><span class="nt">(_estimator, X, y, reset, validate_separately, skip_check_array, **check_params)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2959</span>         <span class="n">y</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">input_name</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">check_y_params</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2960</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2961</span>         <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">check_params</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2962</span>     <span class="n">out</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
+<span class="g g-Whitespace">   </span><span class="mi">2964</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">no_val_X</span> <span class="ow">and</span> <span class="n">check_params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ensure_2d&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">):</span>
+
+<span class="nn">File ~\anaconda3\envs\cpsc330\Lib\site-packages\sklearn\utils\validation.py:1370,</span> in <span class="ni">check_X_y</span><span class="nt">(X, y, accept_sparse, accept_large_sparse, dtype, order, copy, force_writeable, force_all_finite, ensure_all_finite, ensure_2d, allow_nd, multi_output, ensure_min_samples, ensure_min_features, y_numeric, estimator)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1364</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1365</span>         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">estimator_name</span><span class="si">}</span><span class="s2"> requires y to be passed, but the target y is None&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1366</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1368</span> <span class="n">ensure_all_finite</span> <span class="o">=</span> <span class="n">_deprecate_force_all_finite</span><span class="p">(</span><span class="n">force_all_finite</span><span class="p">,</span> <span class="n">ensure_all_finite</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1370</span> <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1371</span>     <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1372</span>     <span class="n">accept_sparse</span><span class="o">=</span><span class="n">accept_sparse</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1373</span>     <span class="n">accept_large_sparse</span><span class="o">=</span><span class="n">accept_large_sparse</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span>     <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span>     <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1376</span>     <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1377</span>     <span class="n">force_writeable</span><span class="o">=</span><span class="n">force_writeable</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1378</span>     <span class="n">ensure_all_finite</span><span class="o">=</span><span class="n">ensure_all_finite</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1379</span>     <span class="n">ensure_2d</span><span class="o">=</span><span class="n">ensure_2d</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1380</span>     <span class="n">allow_nd</span><span class="o">=</span><span class="n">allow_nd</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1381</span>     <span class="n">ensure_min_samples</span><span class="o">=</span><span class="n">ensure_min_samples</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1382</span>     <span class="n">ensure_min_features</span><span class="o">=</span><span class="n">ensure_min_features</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1383</span>     <span class="n">estimator</span><span class="o">=</span><span class="n">estimator</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1384</span>     <span class="n">input_name</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1385</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1387</span> <span class="n">y</span> <span class="o">=</span> <span class="n">_check_y</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">multi_output</span><span class="o">=</span><span class="n">multi_output</span><span class="p">,</span> <span class="n">y_numeric</span><span class="o">=</span><span class="n">y_numeric</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="n">estimator</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1389</span> <span class="n">check_consistent_length</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nn">File ~\anaconda3\envs\cpsc330\Lib\site-packages\sklearn\utils\validation.py:1107,</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_writeable, force_all_finite, ensure_all_finite, ensure_non_negative, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator, input_name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span>         <span class="s2">&quot;Found array with dim </span><span class="si">%d</span><span class="s2">. </span><span class="si">%s</span><span class="s2"> expected &lt;= 2.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1103</span>         <span class="o">%</span> <span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> <span class="n">estimator_name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1106</span> <span class="k">if</span> <span class="n">ensure_all_finite</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1107</span>     <span class="n">_assert_all_finite</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1108</span>         <span class="n">array</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1109</span>         <span class="n">input_name</span><span class="o">=</span><span class="n">input_name</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1110</span>         <span class="n">estimator_name</span><span class="o">=</span><span class="n">estimator_name</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1111</span>         <span class="n">allow_nan</span><span class="o">=</span><span class="n">ensure_all_finite</span> <span class="o">==</span> <span class="s2">&quot;allow-nan&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1112</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1114</span> <span class="k">if</span> <span class="n">copy</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1115</span>     <span class="k">if</span> <span class="n">_is_numpy_namespace</span><span class="p">(</span><span class="n">xp</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1116</span>         <span class="c1"># only make a copy if `array` and `array_orig` may share memory`</span>
+
+<span class="nn">File ~\anaconda3\envs\cpsc330\Lib\site-packages\sklearn\utils\validation.py:120,</span> in <span class="ni">_assert_all_finite</span><span class="nt">(X, allow_nan, msg_dtype, estimator_name, input_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span> <span class="k">if</span> <span class="n">first_pass_isfinite</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>     <span class="k">return</span>
+<span class="ne">--&gt; </span><span class="mi">120</span> <span class="n">_assert_all_finite_element_wise</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span>     <span class="n">xp</span><span class="o">=</span><span class="n">xp</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="n">allow_nan</span><span class="o">=</span><span class="n">allow_nan</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>     <span class="n">msg_dtype</span><span class="o">=</span><span class="n">msg_dtype</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="n">estimator_name</span><span class="o">=</span><span class="n">estimator_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>     <span class="n">input_name</span><span class="o">=</span><span class="n">input_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span> <span class="p">)</span>
+
+<span class="nn">File ~\anaconda3\envs\cpsc330\Lib\site-packages\sklearn\utils\validation.py:169,</span> in <span class="ni">_assert_all_finite_element_wise</span><span class="nt">(X, xp, allow_nan, msg_dtype, estimator_name, input_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span> <span class="k">if</span> <span class="n">estimator_name</span> <span class="ow">and</span> <span class="n">input_name</span> <span class="o">==</span> <span class="s2">&quot;X&quot;</span> <span class="ow">and</span> <span class="n">has_nan_error</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span>     <span class="c1"># Improve the error message on how to handle missing values in</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span>     <span class="c1"># scikit-learn.</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span>     <span class="n">msg_err</span> <span class="o">+=</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>         <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">estimator_name</span><span class="si">}</span><span class="s2"> does not accept missing values&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span>         <span class="s2">&quot; encoded as NaN natively. For supervised learning, you might want&quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">167</span>         <span class="s2">&quot;#estimators-that-handle-nan-values&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">169</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg_err</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: Input X contains NaN.
+<span class="n">KNeighborsRegressor</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">accept</span> <span class="n">missing</span> <span class="n">values</span> <span class="n">encoded</span> <span class="k">as</span> <span class="n">NaN</span> <span class="n">natively</span><span class="o">.</span> <span class="n">For</span> <span class="n">supervised</span> <span class="n">learning</span><span class="p">,</span> <span class="n">you</span> <span class="n">might</span> <span class="n">want</span> <span class="n">to</span> <span class="n">consider</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">ensemble</span><span class="o">.</span><span class="n">HistGradientBoostingClassifier</span> <span class="ow">and</span> <span class="n">Regressor</span> <span class="n">which</span> <span class="n">accept</span> <span class="n">missing</span> <span class="n">values</span> <span class="n">encoded</span> <span class="k">as</span> <span class="n">NaNs</span> <span class="n">natively</span><span class="o">.</span> <span class="n">Alternatively</span><span class="p">,</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">possible</span> <span class="n">to</span> <span class="n">preprocess</span> <span class="n">the</span> <span class="n">data</span><span class="p">,</span> <span class="k">for</span> <span class="n">instance</span> <span class="n">by</span> <span class="n">using</span> <span class="n">an</span> <span class="n">imputer</span> <span class="n">transformer</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">pipeline</span> <span class="ow">or</span> <span class="n">drop</span> <span class="n">samples</span> <span class="k">with</span> <span class="n">missing</span> <span class="n">values</span><span class="o">.</span> <span class="n">See</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">stable</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">impute</span><span class="o">.</span><span class="n">html</span> <span class="n">You</span> <span class="n">can</span> <span class="n">find</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">estimators</span> <span class="n">that</span> <span class="n">handle</span> <span class="n">NaN</span> <span class="n">values</span> <span class="n">at</span> <span class="n">the</span> <span class="n">following</span> <span class="n">page</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">stable</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">impute</span><span class="o">.</span><span class="n">html</span><span class="c1">#estimators-that-handle-nan-values</span>
 </pre></div>
 </div>
 </div>
@@ -2532,7 +2622,7 @@ memory usage: 1.6+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/555a8aeed2673cc5f450b597f01c1049051dc3a0d765f16dce80985d64933cf3.png" src="../../_images/555a8aeed2673cc5f450b597f01c1049051dc3a0d765f16dce80985d64933cf3.png" />
+<img alt="../../_images/ca00ccdc41cb3caa42a7cc0b77e73d907fed2e7bd4adde090b7e86cad2914dd4.png" src="../../_images/ca00ccdc41cb3caa42a7cc0b77e73d907fed2e7bd4adde090b7e86cad2914dd4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2732,7 +2822,6 @@ memory usage: 1.6+ MB
 <h2>❓❓ Questions for you<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="iclicker-exercise-5-2">
 <h3>(iClicker) Exercise 5.2<a class="headerlink" href="#iclicker-exercise-5-2" title="Link to this heading">#</a></h3>
-<p><strong>iClicker cloud join link: https://join.iclicker.com/RITY</strong></p>
 <p><strong>Select all of the following statements which are TRUE.</strong></p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code> ensures a fixed range (i.e., minimum and maximum values) for the features.</p></li>
@@ -2794,36 +2883,36 @@ memory usage: 1.6+ MB
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.003666</td>
-      <td>0.079181</td>
+      <td>0.038283</td>
+      <td>0.457211</td>
       <td>0.696373</td>
       <td>0.794236</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.003388</td>
-      <td>0.070047</td>
+      <td>0.037012</td>
+      <td>0.402655</td>
       <td>0.684447</td>
       <td>0.791467</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.003479</td>
-      <td>0.076358</td>
+      <td>0.037544</td>
+      <td>0.363340</td>
       <td>0.695532</td>
       <td>0.789436</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.003442</td>
-      <td>0.076938</td>
+      <td>0.037627</td>
+      <td>0.440570</td>
       <td>0.679478</td>
       <td>0.793243</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.003316</td>
-      <td>0.047851</td>
+      <td>0.037820</td>
+      <td>0.281962</td>
       <td>0.680657</td>
       <td>0.794820</td>
     </tr>
@@ -3370,10 +3459,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/7l/2m7m0lw97rvf654x1cwtdfmr0000gr/T/ipykernel_70329/4158382658.py:26: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
-  out_col.append((f&quot;%0.3f (+/- %0.3f)&quot; % (mean_scores[i], std_scores[i])))
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3401,15 +3486,15 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   <tbody>
     <tr>
       <th>dummy</th>
-      <td>0.001 (+/- 0.000)</td>
-      <td>0.000 (+/- 0.000)</td>
+      <td>0.002 (+/- 0.000)</td>
+      <td>0.000 (+/- 0.001)</td>
       <td>-0.055 (+/- 0.012)</td>
       <td>-0.055 (+/- 0.001)</td>
     </tr>
     <tr>
       <th>imp + scaling + knn</th>
-      <td>0.014 (+/- 0.001)</td>
-      <td>0.074 (+/- 0.007)</td>
+      <td>0.081 (+/- 0.003)</td>
+      <td>0.429 (+/- 0.040)</td>
       <td>0.693 (+/- 0.014)</td>
       <td>0.797 (+/- 0.015)</td>
     </tr>
@@ -4236,7 +4321,6 @@ You will often see people using <a class="reference external" href="https://pand
 <h2>❓❓ Questions for you<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="iclicker-exercise-5-3">
 <h3>(iClicker) Exercise 5.3<a class="headerlink" href="#iclicker-exercise-5-3" title="Link to this heading">#</a></h3>
-<p><strong>iClicker cloud join link: https://join.iclicker.com/RITY</strong></p>
 <p><strong>Select all of the following statements which are TRUE.</strong></p>
 <ol class="arabic simple">
 <li><p>You can have scaling of numeric features, one-hot encoding of categorical features, and <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> estimator within a single pipeline.</p></li>
@@ -4246,21 +4330,6 @@ You will often see people using <a class="reference external" href="https://pand
 <li><p>If you call <code class="docutils literal notranslate"><span class="pre">cross_validate</span></code> with a pipeline object, it will call <code class="docutils literal notranslate"><span class="pre">fit</span></code> and <code class="docutils literal notranslate"><span class="pre">transform</span></code> on the training fold and only <code class="docutils literal notranslate"><span class="pre">transform</span></code> on the validation fold.</p></li>
 </ol>
 </section>
-</section>
-<section id="what-did-we-learn-today">
-<h2>What did we learn today?<a class="headerlink" href="#what-did-we-learn-today" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Motivation for preprocessing</p></li>
-<li><p>Common preprocessing steps</p>
-<ul>
-<li><p>Imputation</p></li>
-<li><p>Scaling</p></li>
-<li><p>One-hot encoding</p></li>
-</ul>
-</li>
-<li><p>Golden rule in the context of preprocessing</p></li>
-<li><p>Building simple supervised machine learning pipelines using <code class="docutils literal notranslate"><span class="pre">sklearn.pipeline.make_pipeline</span></code>.</p></li>
-</ul>
 <section id="problem-different-transformations-on-different-columns">
 <h3>Problem: Different transformations on different columns<a class="headerlink" href="#problem-different-transformations-on-different-columns" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -4282,8 +4351,23 @@ You will often see people using <a class="reference external" href="https://pand
 </ul>
 </li>
 </ul>
-<p><strong>Coming up: sklearn’s <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html"><code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code></a>!!</strong></p>
 </section>
+</section>
+<section id="what-did-we-learn-today">
+<h2>What did we learn today?<a class="headerlink" href="#what-did-we-learn-today" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Motivation for preprocessing</p></li>
+<li><p>Common preprocessing steps</p>
+<ul>
+<li><p>Imputation</p></li>
+<li><p>Scaling</p></li>
+<li><p>One-hot encoding</p></li>
+</ul>
+</li>
+<li><p>Golden rule in the context of preprocessing</p></li>
+<li><p>Building simple supervised machine learning pipelines using <code class="docutils literal notranslate"><span class="pre">sklearn.pipeline.make_pipeline</span></code>.</p></li>
+</ul>
+<p><strong>Coming up: sklearn’s <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html"><code class="docutils literal notranslate"><span class="pre">ColumnTransformer</span></code></a>!!</strong></p>
 </section>
 </section>
 
@@ -4296,16 +4380,16 @@ You will often see people using <a class="reference external" href="https://pand
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-cpsc330-py"
+            mode: "cpsc330"
         },
         kernelOptions: {
-            name: "conda-env-cpsc330-py",
+            name: "cpsc330",
             path: "./lectures/101-103-Giulia-lectures"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-cpsc330-py'</script>
+    <script>kernelName = 'cpsc330'</script>
 
                 </article>
               
@@ -4385,12 +4469,10 @@ You will often see people using <a class="reference external" href="https://pand
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">❓❓ Questions for you</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iclicker-exercise-5-3">(iClicker) Exercise 5.3</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-did-we-learn-today">What did we learn today?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-different-transformations-on-different-columns">Problem: Different transformations on different columns</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-did-we-learn-today">What did we learn today?</a></li>
 </ul>
   </nav></div>
 
